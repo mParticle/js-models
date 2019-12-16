@@ -1,8 +1,10 @@
 <img src="https://static.mparticle.com/sdk/mp_logo_black.svg" width="280"><br>
 
-# mParticle Server Models
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
-This repo is managed by [Lerna](https://lerna.js.org).
+# mParticle JS Models
+
+A collection of TypeScript/JavaScript models for mParticle services.
 
 ## License
 

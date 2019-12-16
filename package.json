@@ -1,0 +1,38 @@
+{
+    "name": "@mparticle/js-models",
+    "version": "0.0.1",
+    "description": "A collection of api models for mParticle Services",
+    "contributors": [
+        "Alexander Sapountzis <alexs@mparticle.com>"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mparticle/mparticle-api-models/"
+    },
+    "scripts": {
+        "bootstrap": "lerna bootstrap --hoist",
+        "clean": "lerna run clean",
+        "build": "lerna run build",
+        "lint": "lerna run lint",
+        "test": "lerna run test",
+        "pub": "lerna publish"
+    },
+    "pre-commit": [
+        "lint",
+        "test"
+    ],
+    "private": true,
+    "devDependencies": {
+        "@types/jest": "^24.0.23",
+        "gts": "^1.1.2",
+        "jest": "^24.9.0",
+        "lerna": "^3.19.0",
+        "pre-commit": "^1.2.2",
+        "prettier": "^1.19.1",
+        "ts-jest": "^24.1.0",
+        "ts-node": "^8.5.2",
+        "tslib": "^1.10.0",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.3"
+    }
+}
