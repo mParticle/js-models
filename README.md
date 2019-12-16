@@ -6,6 +6,10 @@
 
 A collection of TypeScript/JavaScript models for mParticle services.
 
+# Publish process
+
+Run `npm run pub` locally to initite npm publish
+
 ## License
 
 Copyright 2018 mParticle, Inc.
