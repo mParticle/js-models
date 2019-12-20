@@ -1,6 +1,6 @@
 {
     "name": "@mparticle/event-models",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -38,5 +38,6 @@
     "license": "Apache-2.0",
     "publishConfig": {
         "access": "public"
-    }
+    },
+    "gitHead": "a7a63b5a8098b5bebd18b40816bfa08f3f64fc69"
 }
