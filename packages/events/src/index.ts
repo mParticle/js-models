@@ -1,4 +1,3 @@
-// tslint:disable: max-line-length
 export interface ApplicationInformation {
     application_name?: string;
     application_version?: string;

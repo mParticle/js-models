@@ -1,0 +1,43 @@
+{
+    "name": "@mparticle/data-planning-models",
+    "version": "0.0.1",
+    "description": "",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "repository": "https://github.com/mparticle/js-models/tree/master/packages/data-planning",
+    "files": [
+        "dist/"
+    ],
+    "scripts": {
+        "build": "npm run clean && npm run compile",
+        "clean": "rm -rf ./dist",
+        "compile": "tsc -p tsconfig.build.json",
+        "lint": "npm run gts:check",
+        "test:watch": "jest --watchAll",
+        "test:clear": "jest --clearCache",
+        "test": "jest",
+        "gts:check": "gts check",
+        "gts:fix": "gts fix",
+        "prettier": "prettier --check \"**/*.js\"",
+        "prepublishOnly": "npm run build"
+    },
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "@types/faker": "^4.1.8",
+        "@types/jest": "^24.0.23",
+        "gts": "^1.1.2",
+        "faker": "^4.1.0",
+        "jest": "^24.9.0",
+        "lerna": "^3.19.0",
+        "pre-commit": "^1.2.2",
+        "prettier": "^1.19.1",
+        "ts-jest": "^24.1.0",
+        "ts-node": "^8.5.2",
+        "tslib": "^1.10.0",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.3"
+    },
+    "dependencies": {
+        "@mparticle/event-models": "^1.0.0"
+    }
+}
