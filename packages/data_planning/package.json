@@ -1,10 +1,10 @@
 {
     "name": "@mparticle/data-planning-models",
-    "version": "0.0.2-alpha.0",
+    "version": "0.0.2-alpha.1",
     "description": "",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "repository": "https://github.com/mparticle/js-models/tree/master/packages/data-planning",
+    "repository": "https://github.com/mparticle/js-models/tree/master/packages/data_planning",
     "files": [
         "dist/"
     ],
