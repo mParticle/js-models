@@ -1,6 +1,6 @@
 {
     "name": "@mparticle/js-models",
-    "version": "0.0.1",
+    "version": "0.0.2-alpha.3",
     "description": "A collection of api models for mParticle Services",
     "contributors": [
         "Alexander Sapountzis <alexs@mparticle.com>"
