@@ -1,0 +1,41 @@
+{
+    "event_type": "commerce_event",
+    "data": {
+        "product_impressions": [
+            {
+                "product_impression_list": "my impression",
+                "products": [
+                    {
+                        "name": "product1",
+                        "category": "category",
+                        "coupon_code": "coupon code",
+                        "sku": "1234",
+                        "position": 3,
+                        "price": 1.2,
+                        "quantity": 12,
+                        "time_added": 1579883605450,
+                        "total_amount": 14.399999999999999,
+                        "brand": "Brannnnd",
+                        "variant": "the variant"
+                    },
+                    {
+                        "name": "product2",
+                        "sku": "12345",
+                        "price": 2,
+                        "quantity": 1,
+                        "time_added": 1579883605451,
+                        "total_amount": 2
+                    },
+                    {
+                        "name": "product3",
+                        "sku": "12346",
+                        "price": 3,
+                        "quantity": 1,
+                        "time_added": 1579883605451,
+                        "total_amount": 3
+                    }
+                ]
+            }
+        ]
+    }
+}

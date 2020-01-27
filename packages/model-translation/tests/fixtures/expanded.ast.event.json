@@ -1,0 +1,11 @@
+{
+    "event_type": "application_state_transition",
+    "data": {
+        "timestamp_unixtime_ms": 1579725074814,
+        "session_id": "4C5F066B-EF0B-48CC-BB97-9A1676145BC3",
+        "session_start_unixtime_ms": 1579725074804,
+        "application_transition_type": "application_initialized",
+        "is_first_run": true,
+        "is_upgrade": false
+    }
+}

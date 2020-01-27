@@ -1,10 +1,10 @@
 {
-    "name": "@mparticle/data-planning-models",
-    "version": "0.0.2-alpha.3",
+    "name": "@mparticle/model-translation",
+    "version": "0.0.1",
     "description": "",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "repository": "https://github.com/mparticle/js-models/tree/master/packages/data_planning",
+    "repository": "https://github.com/mparticle/js-models/tree/master/packages/model-translation",
     "files": [
         "dist/"
     ],
@@ -23,9 +23,7 @@
     },
     "license": "Apache-2.0",
     "devDependencies": {
-        "@types/faker": "^4.1.8",
         "@types/jest": "^24.0.23",
-        "faker": "^4.1.0",
         "gts": "^1.1.2",
         "jest": "^24.9.0",
         "lerna": "^3.19.0",
@@ -37,11 +35,7 @@
         "tslint": "^5.20.1",
         "typescript": "^3.7.3"
     },
-    "dependencies": {
-        "@mparticle/event-models": "^1.0.2"
-    },
     "publishConfig": {
         "access": "public"
-    },
-    "gitHead": "a7a63b5a8098b5bebd18b40816bfa08f3f64fc69"
+    }
 }

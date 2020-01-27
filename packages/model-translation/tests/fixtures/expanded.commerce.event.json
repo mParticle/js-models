@@ -1,0 +1,51 @@
+{
+    "event_type": "commerce_event",
+    "data": {
+        "screen_name": "a screen name",
+        "custom_attributes": {},
+        "currency_code": "BTC",
+        "product_action": {
+            "action": "checkout",
+            "checkout_step": 99,
+            "checkout_option": "a checkout option",
+            "product_action_list": "product list name",
+            "product_list_source": "product list source",
+            "transaction_id": "transactionId",
+            "affiliation": "affiliation",
+            "total_amount": 100000,
+            "tax_amount": 2345.3,
+            "shipping_amount": 999.9,
+            "coupon_code": "coupon code",
+            "products": [
+                {
+                    "name": "Android",
+                    "category": "CellPhones",
+                    "coupon_code": "my-coupon-code-2",
+                    "sku": "98765",
+                    "position": 2,
+                    "price": 600,
+                    "quantity": 4,
+                    "time_added": 1579726247390,
+                    "total_amount": 2400,
+                    "brand": "Samsung",
+                    "variant": "SuperDuper",
+                    "attributes": {
+                        "CommerceEvent custom attribtue key": "customvalue",
+                        "product custom attribtue key": "customvalue"
+                    }
+                },
+                {
+                    "name": "iOS",
+                    "sku": "1111",
+                    "price": 1000,
+                    "quantity": 1,
+                    "time_added": 1579726247390,
+                    "total_amount": 1000
+                }
+            ]
+        },
+        "custom_flags": {
+            "flag key1": ["flag value1"]
+        }
+    }
+}

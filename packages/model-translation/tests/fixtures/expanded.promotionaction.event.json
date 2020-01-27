@@ -1,0 +1,22 @@
+{
+    "event_type": "commerce_event",
+    "data": {
+        "promotion_action": {
+            "action": "click",
+            "promotions": [
+                {
+                    "sku": "the Id",
+                    "name": "the name",
+                    "creative": "creative",
+                    "position": "Position #1"
+                },
+                {
+                    "sku": "the Id2",
+                    "name": "the name2",
+                    "creative": "creative2",
+                    "position": "Position #2"
+                }
+            ]
+        }
+    }
+}

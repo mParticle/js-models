@@ -1,0 +1,39 @@
+{
+    "dt": "cm",
+    "pi": [
+        {
+            "pil": "my impression",
+            "pl": [
+                {
+                    "nm": "product1",
+                    "ca": "category",
+                    "cc": "coupon code",
+                    "id": "1234",
+                    "ps": 3,
+                    "pr": 1.2,
+                    "qt": 12,
+                    "act": 1579883605450,
+                    "tpa": 14.399999999999999,
+                    "br": "Brannnnd",
+                    "va": "the variant"
+                },
+                {
+                    "nm": "product2",
+                    "id": "12345",
+                    "pr": 2,
+                    "qt": 1,
+                    "act": 1579883605451,
+                    "tpa": 2
+                },
+                {
+                    "nm": "product3",
+                    "id": "12346",
+                    "pr": 3,
+                    "qt": 1,
+                    "act": 1579883605451,
+                    "tpa": 3
+                }
+            ]
+        }
+    ]
+}

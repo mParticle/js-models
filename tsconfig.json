@@ -4,7 +4,8 @@
         "baseUrl": ".",
         "paths": {
             "@mparticle/data-planning-models": ["packages/data-planning/src"],
-            "@mparticle/event-models": ["packages/events/src"]
+            "@mparticle/event-models": ["packages/events/src"],
+            "@mparticle/model-translation": ["packages/model-translation/src"]
         }
     }
 }

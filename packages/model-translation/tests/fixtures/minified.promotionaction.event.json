@@ -1,0 +1,20 @@
+{
+    "dt": "cm",
+    "pm": {
+        "an": "click",
+        "pl": [
+            {
+                "id": "the Id",
+                "nm": "the name",
+                "cr": "creative",
+                "ps": "Position #1"
+            },
+            {
+                "id": "the Id2",
+                "nm": "the name2",
+                "cr": "creative2",
+                "ps": "Position #2"
+            }
+        ]
+    }
+}

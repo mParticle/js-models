@@ -1,0 +1,20 @@
+{
+    "event_type": "custom_event",
+    "data": {
+        "event_name": "Event Name",
+        "custom_event_type": "Navigation",
+        "event_duration": 100,
+        "custom_attributes": {
+            "attr key2": "attr value2",
+            "attr key": "attr value",
+            "$Category": "the category",
+            "EventLength": "100"
+        },
+        "custom_flags": {
+            "flag key": ["flag value"]
+        },
+        "session_id": "4C5F066B-EF0B-48CC-BB97-9A1676145BC3",
+        "event_start_unixtime_ms": 1579725074823,
+        "timestamp_unixtime_ms": 1579725074823
+    }
+}

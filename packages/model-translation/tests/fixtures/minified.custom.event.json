@@ -1,0 +1,39 @@
+{
+    "dt": "e",
+    "et": "Navigation",
+    "n": "Event Name",
+    "el": 100,
+    "attrs": {
+        "attr key2": "attr value2",
+        "attr key": "attr value",
+        "$Category": "the category",
+        "EventLength": "100"
+    },
+    "flags": {
+        "flag key": ["flag value"]
+    },
+    "ct": 1579725074823,
+    "sid": "4C5F066B-EF0B-48CC-BB97-9A1676145BC3",
+    "sct": 1579725074804,
+    "est": 1579725074823,
+    "en": 0,
+    "cs": {
+        "fds": 5618941952,
+        "efds": 5618941952,
+        "amt": 3126376,
+        "ama": 1507288,
+        "amm": 402653184,
+        "sma": 740286464,
+        "tsm": 1567367168,
+        "bl": 1,
+        "tss": 941,
+        "gps": true,
+        "dct": "offline",
+        "so": 1,
+        "sbo": 1,
+        "sml": false,
+        "smt": 150994944,
+        "ant": 13
+    },
+    "id": "dd88d14e-ad5e-4f60-ae79-b42f79fecc80"
+}
