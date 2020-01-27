@@ -16,7 +16,7 @@ import {
     UninstallEventCriteria,
     UserAttributesCriteria,
     UserIdentitiesCriteria,
-} from '.';
+} from '../criteria';
 
 export interface DataPlanCriteriaBase {}
 

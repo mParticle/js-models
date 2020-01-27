@@ -16,18 +16,15 @@ describe('Data Plan Match', () => {
         const criteria: CustomEventCriteria = {
             event_name: 'My Custom Event',
             custom_event_type: 'location',
-            match_type: DataPlanMatchType.CustomEvent,
         };
 
         const match: DataPlanMatch = {
             type: DataPlanMatchType.CustomEvent,
+            criteria,
         };
 
-        match.criteria = criteria as CustomEventCriteria;
-
         expect(match.type).toBe('custom_event');
-        expect(match.criteria.match_type).toBe('custom_event');
-        expect(match.criteria.event_name).toBe('My Custom Event');
-        expect(match.criteria.custom_event_type).toBe('location');
+        expect(criteria.event_name).toBe('My Custom Event');
+        expect(criteria.custom_event_type).toBe('location');
     });
 });

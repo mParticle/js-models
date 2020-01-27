@@ -1,10 +1,10 @@
 {
-  "extends": "./tsconfig.build.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@mparticle/data-planning-models": ["packages/data_planning/src"],
-      "@mparticle/event-models": ["packages/events/src"]
+    "extends": "./tsconfig.build.json",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@mparticle/data-planning-models": ["packages/data-planning/src"],
+            "@mparticle/event-models": ["packages/events/src"]
+        }
     }
-  }
 }
