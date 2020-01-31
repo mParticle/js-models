@@ -49,6 +49,18 @@ export const eventTypeMap: Record<string, string> = {
     uic: 'user_identity_change',
 };
 
+export const customEventTypeMap: Record<string, string> = {
+    unknown: 'Unknown',
+    navigation: 'Navigation',
+    location: 'Location',
+    search: 'Search',
+    transaction: 'Transaction',
+    user_content: 'UserContent',
+    user_preference: 'UserPreference',
+    social: 'Social',
+    other: 'Other',
+};
+
 export const productActionMap: Record<string, string> = {
     action: 'an',
     checkout_step: 'cs',
@@ -82,23 +94,3 @@ export const productMap: Record<string, string> = {
     variant: 'va',
     creative: 'cr',
 };
-
-export function matchMap(
-    element: string,
-    map: Record<string, string>
-): string | undefined {
-    if (element in map) {
-        return map[element];
-    }
-    return undefined;
-}
-
-export function matchMapReverse(
-    element: string,
-    map: Record<string, string>
-): string | undefined {
-    if (Object.values(map).includes(element)) {
-        return Object.keys(map).find(selector => element === map[selector]);
-    }
-    return undefined;
-}

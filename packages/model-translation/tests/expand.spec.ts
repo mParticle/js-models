@@ -8,6 +8,7 @@ import {
     minifiedProductImpression,
     minifiedPromotionAction,
 } from './fixtures';
+import { customEventTypeMap } from '../src/maps';
 
 describe('expand', () => {
     it('should expand a minified customEvent', () => {
@@ -15,7 +16,7 @@ describe('expand', () => {
             event_type: 'custom_event',
             data: {
                 event_name: 'Event Name',
-                custom_event_type: 'Navigation',
+                custom_event_type: 'navigation',
                 event_duration: 100,
                 custom_attributes: {
                     'attr key2': 'attr value2',
@@ -31,6 +32,22 @@ describe('expand', () => {
                 timestamp_unixtime_ms: 1579725074823,
                 session_start_unixtime_ms: 1579725074804,
             },
+        });
+    });
+
+    it('should expand custom_event_type', () => {
+        Object.keys(customEventTypeMap).forEach(element => {
+            expect(
+                expand({
+                    dt: 'e',
+                    et: customEventTypeMap[element],
+                })
+            ).toEqual({
+                event_type: 'custom_event',
+                data: {
+                    custom_event_type: element,
+                },
+            });
         });
     });
 

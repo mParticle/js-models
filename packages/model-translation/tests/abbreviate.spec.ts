@@ -1,5 +1,6 @@
 import { abbreviate } from '../src/abbreviate';
 import { expandedCustomEvent, expandedCommerceEvent } from './fixtures';
+import { customEventTypeMap } from '../src/maps';
 
 describe('abbreviate', () => {
     it('should abbreviate an expanded customEvent', () => {
@@ -20,6 +21,22 @@ describe('abbreviate', () => {
             ct: 1579725074823,
             est: 1579725074823,
             sid: '4C5F066B-EF0B-48CC-BB97-9A1676145BC3',
+        });
+    });
+
+    it('should abbreviate custom_event_types', () => {
+        Object.keys(customEventTypeMap).forEach(element => {
+            expect(
+                abbreviate({
+                    event_type: 'custom_event',
+                    data: {
+                        custom_event_type: element,
+                    },
+                })
+            ).toEqual({
+                dt: 'e',
+                et: customEventTypeMap[element],
+            });
         });
     });
 

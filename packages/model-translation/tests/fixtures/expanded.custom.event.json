@@ -2,7 +2,7 @@
     "event_type": "custom_event",
     "data": {
         "event_name": "Event Name",
-        "custom_event_type": "Navigation",
+        "custom_event_type": "navigation",
         "event_duration": 100,
         "custom_attributes": {
             "attr key2": "attr value2",

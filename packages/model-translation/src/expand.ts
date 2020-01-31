@@ -1,12 +1,7 @@
 // tslint:disable: no-any
 
-import {
-    eventTypeMap,
-    expandMap,
-    productMap,
-    productActionMap,
-    matchMapReverse,
-} from './maps';
+import { eventTypeMap, expandMap, productMap, productActionMap } from './maps';
+import { pascalCaseToUnderscore, matchMapReverse } from './utils';
 
 export const expand = (obj: { [key: string]: any }) => {
     let eventType;
@@ -20,7 +15,9 @@ export const expand = (obj: { [key: string]: any }) => {
     }
 
     for (const el in obj) {
-        if (el === 'pd') {
+        if (el === 'et') {
+            data['custom_event_type'] = pascalCaseToUnderscore(obj[el]);
+        } else if (el === 'pd') {
             const productAction = expandProductAction(obj['pd']);
             data['product_action'] = productAction;
         } else if (el === 'pm') {

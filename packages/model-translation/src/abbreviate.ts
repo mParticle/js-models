@@ -1,12 +1,7 @@
 // tslint:disable: no-any
-import {
-    expandMap,
-    eventTypeMap,
-    matchMapReverse,
-    matchMap,
-    productMap,
-    productActionMap,
-} from './maps';
+import { expandMap, eventTypeMap, productMap, productActionMap } from './maps';
+
+import { matchMapReverse, matchMap, underscoreToPascalCase } from './utils';
 
 export const abbreviate = (obj: { [key: string]: any }) => {
     const event: { [key: string]: any } = {};
@@ -18,7 +13,9 @@ export const abbreviate = (obj: { [key: string]: any }) => {
 
     for (const el in data) {
         if (data.hasOwnProperty(el)) {
-            if (el === 'product_action') {
+            if (el === 'custom_event_type') {
+                event.et = underscoreToPascalCase(data[el]);
+            } else if (el === 'product_action') {
                 event.pd = abbreviateProductAction(data[el]);
             } else {
                 const key = matchMapReverse(el, expandMap);
