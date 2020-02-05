@@ -199,8 +199,8 @@ describe('Event Server Models', () => {
           }
         },
         ccpa: {
-          'data-sale-opt-out': {
-            opted_out: true,
+          'data_sale_opt_out': {
+            consented: true,
             location: 'mparticle.test/gdpr',
             timestamp_unixtime_ms: 12341324134134,
             hardware_id: 'macbook-pro'
@@ -371,7 +371,7 @@ describe('Event Server Models', () => {
       gdpr: {
         some_consent_object: {
           consented: true,
-          regulation: 'Add U to everything',
+          purpose: 'Add U to everything',
           document: 'standards.v1',
           timestamp_unixtime_ms: 1460592000,
           location: 'Great Britain',
@@ -379,8 +379,8 @@ describe('Event Server Models', () => {
         }
       },
       ccpa: {
-        some_consent_object: {
-          opted_out: true,
+        data_sale_opt_out: {
+          consented: true,
           timestamp_unixtime_ms: 1577836800,
           location: 'California',
           hardware_id: 'my_computers_mac_address'

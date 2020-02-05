@@ -132,12 +132,7 @@ export interface BreakcrumbEventData extends CommonEventData {
     label: string;
 }
 
-export interface CCPAConsentState {
-    opted_out?: boolean;
-    timestamp_unixtime_ms?: number;
-    location?: string;
-    hardware_id?: string;
-}
+export type CCPAConsentState = Omit<GDPRConsentState, 'purpose'>;
 
 export interface CommerceEvent {
     data?: CommerceEventData;
@@ -204,7 +199,7 @@ export interface CommonEventData {
 
 export interface ConsentState {
     gdpr?: { [key: string]: GDPRConsentState };
-    ccpa?: { [key: string]: CCPAConsentState };
+    ccpa?: { data_sale_opt_out: CCPAConsentState };
 }
 
 export interface CrashReportEvent {
@@ -404,8 +399,9 @@ export type EventType =
     | 'user_attribute_change'
     | 'user_identity_change'
     | 'uninstall';
+
 export interface GDPRConsentState {
-    regulation?: string;
+    purpose?: string;
     document?: string;
     consented: boolean;
     timestamp_unixtime_ms?: number;
