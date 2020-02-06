@@ -15,7 +15,7 @@ npm install @mparticle/data-planning-models
 ## Usage
 
 ```typescript
-import { DataPlan } from '@mparticle/data-plan-models';
+import { DataPlan, DataPlanMatchType, DataPlanValidatorType } from '@mparticle/data-planning-models';
 
 const samplePlan: DataPlan = {
     data_plan_id: 'test-XXXXXXX',
@@ -28,14 +28,14 @@ const samplePlan: DataPlan = {
                 data_points: [
                     {
                         match: {
-                            type: 'custom_event',
+                            type: DataPlanMatchType.CustomEvent,
                             criteria: {
                                 event_name: 'My Custom Event',
                                 custom_event_type: 'navigation',
                             },
                         },
                         validator: {
-                            type: 'json_schema',
+                            type: DataPlanValidatorType.JSONSchema,
                             definition: {
                                 properties: {},
                             },
