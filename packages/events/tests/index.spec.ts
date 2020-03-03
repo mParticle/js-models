@@ -1,42 +1,76 @@
+/* tslint:disable:max-line-length */
+
 import {
   BaseEvent,
   ApplicationInformation,
+  ApplicationInformationOs,
   ApplicationInformationOsEnum,
-  ApplicationStateTransitionEventEventTypeEnum,
+  ApplicationStateTransitionEventEventType,
   ApplicationStateTransitionEventData,
-  ApplicationStateTransitionEventDataApplicationTransitionTypeEnum,
+  ApplicationStateTransitionEventDataApplicationTransitionType,
   AttributionInfo,
   Batch,
+  BatchEnvironment,
   BatchEnvironmentEnum,
   BatchUserIdentities,
   BreadcrumbEvent,
-  BreadcrumbEventEventTypeEnum,
+  BreadcrumbEventEventType,
   CommerceEvent,
   ConsentState,
   CrashReportEvent,
-  CommerceEventEventTypeEnum,
-  CommerceEventDataCustomEventTypeEnum,
-  DeviceCurrentStateDeviceOrientationEnum,
-  DeviceCurrentStateStatusBarOrientationEnum,
-  DeviceInformationPlatformEnum,
+  CommerceEventEventType,
+  CommerceEventDataCustomEventType,
+  DeviceCurrentStateDeviceOrientation,
+  DeviceCurrentStateStatusBarOrientation,
+  DeviceInformationPlatform,
   CustomEvent,
   NetworkPerformanceEvent,
   OptOutEvent,
-  ProductActionActionEnum,
+  ProductActionAction,
   ProfileEvent,
-  ProfileEventDataProfileEventTypeEnum,
-  PromotionActionActionEnum,
+  ProfileEventDataProfileEventType,
+  PromotionActionAction,
   PushMessageEvent,
-  PushMessageEventDataPushMessageTypeEnum,
-  PushMessageEventDataApplicationStateEnum,
-  PushMessageEventDataPushMessageBehaviorEnum,
+  PushMessageEventDataPushMessageType,
+  PushMessageEventDataApplicationState,
+  PushMessageEventDataPushMessageBehavior,
   PushRegistrationEvent,
   ScreenViewEvent,
   SessionEndEvent,
   SessionStartEvent,
-  SourceInformationChannelEnum,
+  SourceInformationChannel,
   UserAttributeChangeEvent,
-  UserIdentityChangeEvent
+  UserIdentityChangeEvent,
+  ApplicationStateTransitionEventEventTypeEnum,
+  ApplicationStateTransitionEventDataApplicationTransitionTypeEnum,
+  SourceInformationChannelEnum,
+  EventTypeEnum,
+  BreadcrumbEventEventTypeEnum,
+  CommerceEventEventTypeEnum,
+  ProductActionActionEnum,
+  PromotionActionActionEnum,
+  CommerceEventDataCustomEventTypeEnum,
+  CrashReportEventEventTypeEnum,
+  CustomEventEventTypeEnum,
+  CustomEventDataCustomEventTypeEnum,
+  DeviceCurrentStateDeviceOrientationEnum,
+  DeviceCurrentStateStatusBarOrientationEnum,
+  DeviceInformationPlatformEnum,
+  NetworkPerformanceEventEventTypeEnum,
+  OptOutEventEnum,
+  ProfileEventEventTypeEnum,
+  ProfileEventDataProfileEventTypeEnum,
+  PushMessageEventEventTypeEnum,
+  PushMessageEventDataPushMessageTypeEnum,
+  PushMessageEventDataApplicationStateEnum,
+  PushMessageEventDataPushMessageBehaviorEnum,
+  UserAttributeChangeEventEventTypeEnum,
+  UserIdentityChangeEventEventTypeEnum,
+  IdentityTypeEnum,
+  SessionStartEventEventTypeEnum,
+  SessionEndEventEventTypeEnum,
+  ScreenViewEventEventTypeEnum,
+  PushRegistrationEventEventTypeEnum,
 } from '../src/index';
 
 describe('Event Server Models', () => {
@@ -47,7 +81,7 @@ describe('Event Server Models', () => {
       application_version: '1.2.3,',
       application_build_number: '112233',
       install_referrer: 'test_install_referrer',
-      os: 'MobileWeb',
+      os: ApplicationInformationOsEnum.mobileWeb,
       apple_search_ads_attributes: {
         baz: {
           nested: 'true'
@@ -57,41 +91,41 @@ describe('Event Server Models', () => {
 
     expect(appInfo).toBeDefined();
 
-    const xbox: ApplicationInformationOsEnum = 'Xbox';
-    const unknown: ApplicationInformationOsEnum = 'Unknown';
-    const IOS: ApplicationInformationOsEnum = 'IOS';
-    const android: ApplicationInformationOsEnum = 'Android';
-    const windowsPhone: ApplicationInformationOsEnum = 'WindowsPhone';
-    const mobileWeb: ApplicationInformationOsEnum = 'MobileWeb';
-    const unityIOS: ApplicationInformationOsEnum = 'UnityIOS';
-    const unityAndroid: ApplicationInformationOsEnum = 'UnityAndroid';
-    const desktop: ApplicationInformationOsEnum = 'Desktop';
-    const TVOS: ApplicationInformationOsEnum = 'TVOS';
-    const roku: ApplicationInformationOsEnum = 'Roku';
-    const outOfBand: ApplicationInformationOsEnum = 'OutOfBand';
-    const alexa: ApplicationInformationOsEnum = 'Alexa';
-    const smartTV: ApplicationInformationOsEnum = 'SmartTV';
-    const fireTV: ApplicationInformationOsEnum = 'FireTV';
+    const xbox: ApplicationInformationOs = ApplicationInformationOsEnum.xbox;
+    const unknown: ApplicationInformationOs = ApplicationInformationOsEnum.unknown;
+    const IOS: ApplicationInformationOs = ApplicationInformationOsEnum.iOS;
+    const android: ApplicationInformationOs = ApplicationInformationOsEnum.android;
+    const windowsPhone: ApplicationInformationOs = ApplicationInformationOsEnum.windowsPhone;
+    const mobileWeb: ApplicationInformationOs = ApplicationInformationOsEnum.mobileWeb;
+    const unityIOS: ApplicationInformationOs = ApplicationInformationOsEnum.unityIOS;
+    const unityAndroid: ApplicationInformationOs = ApplicationInformationOsEnum.unityAndroid;
+    const desktop: ApplicationInformationOs = ApplicationInformationOsEnum.desktop;
+    const TVOS: ApplicationInformationOs = ApplicationInformationOsEnum.tvOS;
+    const roku: ApplicationInformationOs = ApplicationInformationOsEnum.roku;
+    const outOfBand: ApplicationInformationOs = ApplicationInformationOsEnum.outOfBand;
+    const alexa: ApplicationInformationOs = ApplicationInformationOsEnum.alexa;
+    const smartTV: ApplicationInformationOs = ApplicationInformationOsEnum.smartTV;
+    const fireTV: ApplicationInformationOs = ApplicationInformationOsEnum.fireTV;
 
-    expect(xbox).toBeDefined();
-    expect(unknown).toBeDefined();
-    expect(IOS).toBeDefined();
-    expect(android).toBeDefined();
-    expect(windowsPhone).toBeDefined();
-    expect(mobileWeb).toBeDefined();
-    expect(unityIOS).toBeDefined();
-    expect(unityAndroid).toBeDefined();
-    expect(desktop).toBeDefined();
-    expect(TVOS).toBeDefined();
-    expect(roku).toBeDefined();
-    expect(outOfBand).toBeDefined();
-    expect(alexa).toBeDefined();
-    expect(smartTV).toBeDefined();
-    expect(fireTV).toBeDefined();
+    expect(xbox).toBe('Xbox');
+    expect(unknown).toBe('Unknown');
+    expect(IOS).toBe('IOS');
+    expect(android).toBe('Android');
+    expect(windowsPhone).toBe('WindowsPhone');
+    expect(mobileWeb).toBe('MobileWeb');
+    expect(unityIOS).toBe('UnityIOS');
+    expect(unityAndroid).toBe('UnityAndroid');
+    expect(desktop).toBe('Desktop');
+    expect(TVOS).toBe('TVOS');
+    expect(roku).toBe('Roku');
+    expect(outOfBand).toBe('OutOfBand');
+    expect(alexa).toBe('Alexa');
+    expect(smartTV).toBe('SmartTV');
+    expect(fireTV).toBe('FireTV');
 
-    const appStateTransition: ApplicationStateTransitionEventEventTypeEnum =
-      'application_state_transition';
-    expect(appStateTransition).toBeDefined();
+    const appStateTransition: ApplicationStateTransitionEventEventType =
+      ApplicationStateTransitionEventEventTypeEnum.applicationStateTransition;
+    expect(appStateTransition).toBe('application_state_transition');
 
     const appStateTransitionEvent: ApplicationStateTransitionEventData = {
       successfully_closed: true,
@@ -99,22 +133,23 @@ describe('Event Server Models', () => {
       is_upgrade: false,
       push_notification_payload: 'PUSH!',
       launch_referral: 'maybe',
-      application_transition_type: 'application_exit'
+      application_transition_type:
+        ApplicationStateTransitionEventDataApplicationTransitionTypeEnum.applicationForeground,
     };
     expect(appStateTransitionEvent).toBeDefined();
 
-    const applicationInitialized: ApplicationStateTransitionEventDataApplicationTransitionTypeEnum =
-      'application_initialized';
-    const applicationExit: ApplicationStateTransitionEventDataApplicationTransitionTypeEnum =
-      'application_exit';
-    const applicationBackground: ApplicationStateTransitionEventDataApplicationTransitionTypeEnum =
-      'application_background';
-    const applicationForeground: ApplicationStateTransitionEventDataApplicationTransitionTypeEnum =
-      'application_foreground';
-    expect(applicationInitialized).toBeDefined();
-    expect(applicationExit).toBeDefined();
-    expect(applicationBackground).toBeDefined();
-    expect(applicationForeground).toBeDefined();
+    const applicationInitialized: ApplicationStateTransitionEventDataApplicationTransitionType =
+      ApplicationStateTransitionEventDataApplicationTransitionTypeEnum.applicationInitialized
+    const applicationExit: ApplicationStateTransitionEventDataApplicationTransitionType =
+      ApplicationStateTransitionEventDataApplicationTransitionTypeEnum.applicationExit;
+    const applicationBackground: ApplicationStateTransitionEventDataApplicationTransitionType =
+      ApplicationStateTransitionEventDataApplicationTransitionTypeEnum.applicationBackground;
+    const applicationForeground: ApplicationStateTransitionEventDataApplicationTransitionType =
+      ApplicationStateTransitionEventDataApplicationTransitionTypeEnum.applicationForeground;
+    expect(applicationInitialized).toBe('application_initialized');
+    expect(applicationExit).toBe('application_exit');
+    expect(applicationBackground).toBe('application_background');
+    expect(applicationForeground).toBe('application_foreground');
 
     const attribution: AttributionInfo = {
       service_provider: 'service provider',
@@ -124,7 +159,7 @@ describe('Event Server Models', () => {
     expect(attribution).toBeDefined();
 
     const baseEvent: BaseEvent = {
-      event_type: 'opt_out',
+      event_type: EventTypeEnum.optOut,
       data: {
         timestamp_unixtime_ms: 350006400,
         source_message_id: 'the_source',
@@ -165,7 +200,7 @@ describe('Event Server Models', () => {
       user_identities: {
         alias: 'clark-kent'
       },
-      environment: 'development',
+      environment: BatchEnvironmentEnum.development,
       api_key: '1324213241234',
       api_keys: ['9080qerqw9er8-q0w9easfd'],
       ip: '127.0.0.1',
@@ -176,7 +211,7 @@ describe('Event Server Models', () => {
       },
       partner_identity: 'bizarro',
       source_info: {
-        channel: 'javascript'
+        channel: SourceInformationChannelEnum.javascript,
       },
       mp_deviceid: '12309100100011771012309',
       attribution_info: {
@@ -217,9 +252,9 @@ describe('Event Server Models', () => {
     };
     expect(batch).toBeDefined();
 
-    const unknownBatchEnvironment: BatchEnvironmentEnum = 'unknown';
-    const devBatchEnvironment: BatchEnvironmentEnum = 'development';
-    const prodBatchEnvironment: BatchEnvironmentEnum = 'production';
+    const unknownBatchEnvironment: BatchEnvironment = 'unknown';
+    const devBatchEnvironment: BatchEnvironment = 'development';
+    const prodBatchEnvironment: BatchEnvironment = 'production';
 
     expect(unknownBatchEnvironment).toBe('unknown');
     expect(devBatchEnvironment).toBe('development');
@@ -272,21 +307,21 @@ describe('Event Server Models', () => {
           type: 'gdpr_change'
         }
       },
-      event_type: 'breadcrumb'
+      event_type: BreadcrumbEventEventTypeEnum.breadcrumb,
     };
     expect(breadcrumbEvent).toBeDefined();
 
-    const breadcrumbEventType: BreadcrumbEventEventTypeEnum = 'breadcrumb';
+    const breadcrumbEventType: BreadcrumbEventEventType = BreadcrumbEventEventTypeEnum.breadcrumb;
     expect(breadcrumbEventType).toBe('breadcrumb');
 
     const commerceEventData: CommerceEvent = {
-      event_type: 'commerce_event',
+      event_type: CommerceEventEventTypeEnum.commerceEvent,
       data: {
         product_action: {
-          action: 'click'
+          action: ProductActionActionEnum.click,
         },
         promotion_action: {
-          action: 'view',
+          action: PromotionActionActionEnum.view,
           promotions: [
             {
               id: 'q2eqwer',
@@ -319,46 +354,46 @@ describe('Event Server Models', () => {
         screen_name: 'test screen',
         is_non_interactive: false,
         event_name: 'Test Event',
-        custom_event_type: 'view_detail',
+        custom_event_type: CommerceEventDataCustomEventTypeEnum.viewDetail,
         custom_flags: {}
       }
     };
     expect(commerceEventData).toBeDefined();
 
-    const commerceEventEventType: CommerceEventEventTypeEnum = 'commerce_event';
+    const commerceEventEventType: CommerceEventEventType = CommerceEventEventTypeEnum.commerceEvent;
     expect(commerceEventEventType).toBe('commerce_event');
 
-    const addToCartCommerceEnum: CommerceEventDataCustomEventTypeEnum =
-      'add_to_cart';
-    const removeFromCartCommerceEnumEnum: CommerceEventDataCustomEventTypeEnum =
-      'remove_from_cart';
-    const checkoutCommerceEnum: CommerceEventDataCustomEventTypeEnum =
-      'checkout';
-    const checkoutOptionCommerceEnum: CommerceEventDataCustomEventTypeEnum =
-      'checkout_option';
-    const clickCommerceEnum: CommerceEventDataCustomEventTypeEnum = 'click';
-    const veiwDetailCommerceEnum: CommerceEventDataCustomEventTypeEnum =
-      'view_detail';
-    const purchaseCommerceEnum: CommerceEventDataCustomEventTypeEnum =
-      'purchase';
-    const refundCommerceEnum: CommerceEventDataCustomEventTypeEnum = 'refund';
-    const promotionViewCommerceEnum: CommerceEventDataCustomEventTypeEnum =
-      'promotion_view';
-    const promotionClickCommerceEnum: CommerceEventDataCustomEventTypeEnum =
-      'promotion_click';
-    const addToWishlistCommerceEnum: CommerceEventDataCustomEventTypeEnum =
-      'add_to_wishlist';
-    const removeFromWishlistCommerceEnum: CommerceEventDataCustomEventTypeEnum =
-      'remove_from_wishlist';
-    const impressionCommerceEnum: CommerceEventDataCustomEventTypeEnum =
-      'impression';
+    const addToCartCommerceEnum: CommerceEventDataCustomEventType =
+      CommerceEventDataCustomEventTypeEnum.addToCart;
+    const removeFromCartCommerceEnumEnum: CommerceEventDataCustomEventType =
+      CommerceEventDataCustomEventTypeEnum.removeFromCart;
+    const checkoutCommerceEnum: CommerceEventDataCustomEventType =
+      CommerceEventDataCustomEventTypeEnum.checkout;
+    const checkoutOptionCommerceEnum: CommerceEventDataCustomEventType =
+      CommerceEventDataCustomEventTypeEnum.checkoutOption;
+    const clickCommerceEnum: CommerceEventDataCustomEventType = CommerceEventDataCustomEventTypeEnum.click;
+    const viewDetailCommerceEnum: CommerceEventDataCustomEventType =
+      CommerceEventDataCustomEventTypeEnum.viewDetail;
+    const purchaseCommerceEnum: CommerceEventDataCustomEventType =
+      CommerceEventDataCustomEventTypeEnum.purchase;
+    const refundCommerceEnum: CommerceEventDataCustomEventType = CommerceEventDataCustomEventTypeEnum.refund;
+    const promotionViewCommerceEnum: CommerceEventDataCustomEventType =
+      CommerceEventDataCustomEventTypeEnum.promotionView;
+    const promotionClickCommerceEnum: CommerceEventDataCustomEventType =
+      CommerceEventDataCustomEventTypeEnum.promotionClick;
+    const addToWishlistCommerceEnum: CommerceEventDataCustomEventType =
+      CommerceEventDataCustomEventTypeEnum.addToWishlist;
+    const removeFromWishlistCommerceEnum: CommerceEventDataCustomEventType =
+      CommerceEventDataCustomEventTypeEnum.removeFromWishList;
+    const impressionCommerceEnum: CommerceEventDataCustomEventType =
+      CommerceEventDataCustomEventTypeEnum.impression;
 
     expect(addToCartCommerceEnum).toBe('add_to_cart');
     expect(removeFromCartCommerceEnumEnum).toBe('remove_from_cart');
     expect(checkoutCommerceEnum).toBe('checkout');
     expect(checkoutOptionCommerceEnum).toBe('checkout_option');
     expect(clickCommerceEnum).toBe('click');
-    expect(veiwDetailCommerceEnum).toBe('view_detail');
+    expect(viewDetailCommerceEnum).toBe('view_detail');
     expect(purchaseCommerceEnum).toBe('purchase');
     expect(refundCommerceEnum).toBe('refund');
     expect(promotionViewCommerceEnum).toBe('promotion_view');
@@ -390,7 +425,7 @@ describe('Event Server Models', () => {
     expect(consentState).toBeDefined();
 
     const crashReportEvent: CrashReportEvent = {
-      event_type: 'crash_report',
+      event_type: CrashReportEventEventTypeEnum.crashReport,
       data: {
         breadcrumbs: ['rye', 'whole_wheat'],
         class_name: 'CrashReportClass',
@@ -433,9 +468,9 @@ describe('Event Server Models', () => {
     expect(crashReportEvent).toBeDefined();
 
     const customEvent: CustomEvent = {
-      event_type: 'custom_event',
+      event_type: CustomEventEventTypeEnum.customEvent,
       data: {
-        custom_event_type: 'other',
+        custom_event_type: CustomEventDataCustomEventTypeEnum.other,
         event_name: 'My custom event',
         custom_flags: {
           custom: 'flag'
@@ -469,18 +504,18 @@ describe('Event Server Models', () => {
     };
     expect(customEvent).toBeDefined();
 
-    const portraitDeviceEnum: DeviceCurrentStateDeviceOrientationEnum =
-      'portrait';
-    const portaitUpsideDownEnum: DeviceCurrentStateDeviceOrientationEnum =
-      'portrait_upside_down';
-    const landscapeEnum: DeviceCurrentStateDeviceOrientationEnum = 'landscape';
-    const landscapeLeftEnum: DeviceCurrentStateDeviceOrientationEnum =
-      'LandscapeLeft';
-    const landscapeRightEnum: DeviceCurrentStateDeviceOrientationEnum =
-      'LandscapeRight';
-    const faceUpEnum: DeviceCurrentStateDeviceOrientationEnum = 'FaceUp';
-    const faceDownEnum: DeviceCurrentStateDeviceOrientationEnum = 'FaceDown';
-    const squareEnum: DeviceCurrentStateDeviceOrientationEnum = 'Square';
+    const portraitDeviceEnum: DeviceCurrentStateDeviceOrientation =
+      DeviceCurrentStateDeviceOrientationEnum.portrait;
+    const portaitUpsideDownEnum: DeviceCurrentStateDeviceOrientation =
+      DeviceCurrentStateDeviceOrientationEnum.portraitUpsideDown;
+    const landscapeEnum: DeviceCurrentStateDeviceOrientation = DeviceCurrentStateDeviceOrientationEnum.landscape;
+    const landscapeLeftEnum: DeviceCurrentStateDeviceOrientation =
+      DeviceCurrentStateDeviceOrientationEnum.landscapeLeft;
+    const landscapeRightEnum: DeviceCurrentStateDeviceOrientation =
+      DeviceCurrentStateDeviceOrientationEnum.landscapeRight;
+    const faceUpEnum: DeviceCurrentStateDeviceOrientation = DeviceCurrentStateDeviceOrientationEnum.faceUp;
+    const faceDownEnum: DeviceCurrentStateDeviceOrientation = DeviceCurrentStateDeviceOrientationEnum.faceDown;
+    const squareEnum: DeviceCurrentStateDeviceOrientation = DeviceCurrentStateDeviceOrientationEnum.square;
 
     expect(portraitDeviceEnum).toBe('portrait');
     expect(portaitUpsideDownEnum).toBe('portrait_upside_down');
@@ -491,22 +526,22 @@ describe('Event Server Models', () => {
     expect(faceDownEnum).toBe('FaceDown');
     expect(squareEnum).toBe('Square');
 
-    const portraitStatusBarEnum: DeviceCurrentStateStatusBarOrientationEnum =
-      'portrait';
-    const portaitUpsideDownStatusBarEnum: DeviceCurrentStateStatusBarOrientationEnum =
-      'portrait_upside_down';
-    const landscapeStatusBarEnum: DeviceCurrentStateStatusBarOrientationEnum =
-      'landscape';
-    const landscapeLeftStatusBarEnum: DeviceCurrentStateStatusBarOrientationEnum =
-      'LandscapeLeft';
-    const landscapeRightStatusBarEnum: DeviceCurrentStateStatusBarOrientationEnum =
-      'LandscapeRight';
-    const faceUpStatusBarEnum: DeviceCurrentStateStatusBarOrientationEnum =
-      'FaceUp';
-    const faceDownStatusBarEnum: DeviceCurrentStateStatusBarOrientationEnum =
-      'FaceDown';
-    const squareStatusBarEnum: DeviceCurrentStateStatusBarOrientationEnum =
-      'Square';
+    const portraitStatusBarEnum: DeviceCurrentStateStatusBarOrientation =
+      DeviceCurrentStateStatusBarOrientationEnum.portrait;
+    const portaitUpsideDownStatusBarEnum: DeviceCurrentStateStatusBarOrientation =
+      DeviceCurrentStateStatusBarOrientationEnum.portraitUpsideDown;
+    const landscapeStatusBarEnum: DeviceCurrentStateStatusBarOrientation =
+      DeviceCurrentStateStatusBarOrientationEnum.landscape;
+    const landscapeLeftStatusBarEnum: DeviceCurrentStateStatusBarOrientation =
+      DeviceCurrentStateStatusBarOrientationEnum.landscapeLeft;
+    const landscapeRightStatusBarEnum: DeviceCurrentStateStatusBarOrientation =
+      DeviceCurrentStateStatusBarOrientationEnum.landscapeRight;
+    const faceUpStatusBarEnum: DeviceCurrentStateStatusBarOrientation =
+      DeviceCurrentStateStatusBarOrientationEnum.faceUp;
+    const faceDownStatusBarEnum: DeviceCurrentStateStatusBarOrientation =
+      DeviceCurrentStateStatusBarOrientationEnum.faceDown;
+    const squareStatusBarEnum: DeviceCurrentStateStatusBarOrientation =
+      DeviceCurrentStateStatusBarOrientationEnum.square;
 
     expect(portraitStatusBarEnum).toBe('portrait');
     expect(portaitUpsideDownStatusBarEnum).toBe('portrait_upside_down');
@@ -517,15 +552,15 @@ describe('Event Server Models', () => {
     expect(faceDownStatusBarEnum).toBe('FaceDown');
     expect(squareStatusBarEnum).toBe('Square');
 
-    const iosDeviceInfo: DeviceInformationPlatformEnum = 'iOS';
-    const androidDeviceInfo: DeviceInformationPlatformEnum = 'Android';
-    const webDeviceInfo: DeviceInformationPlatformEnum = 'web';
-    const desktopDeviceInfo: DeviceInformationPlatformEnum = 'desktop';
-    const tvOsDeviceInfo: DeviceInformationPlatformEnum = 'tvOS';
-    const rokuDeviceInfo: DeviceInformationPlatformEnum = 'roku';
-    const outOfBandDeviceInfo: DeviceInformationPlatformEnum = 'out_of_band';
-    const smartTVDeviceInfo: DeviceInformationPlatformEnum = 'smart_tv';
-    const xboxDeviceInfo: DeviceInformationPlatformEnum = 'xbox';
+    const iosDeviceInfo: DeviceInformationPlatform = DeviceInformationPlatformEnum.iOS;
+    const androidDeviceInfo: DeviceInformationPlatform = DeviceInformationPlatformEnum.android;
+    const webDeviceInfo: DeviceInformationPlatform = DeviceInformationPlatformEnum.web;
+    const desktopDeviceInfo: DeviceInformationPlatform = DeviceInformationPlatformEnum.desktop;
+    const tvOsDeviceInfo: DeviceInformationPlatform = DeviceInformationPlatformEnum.tvOS;
+    const rokuDeviceInfo: DeviceInformationPlatform = DeviceInformationPlatformEnum.roku;
+    const outOfBandDeviceInfo: DeviceInformationPlatform = DeviceInformationPlatformEnum.outOfBand;
+    const smartTVDeviceInfo: DeviceInformationPlatform = DeviceInformationPlatformEnum.smartTV;
+    const xboxDeviceInfo: DeviceInformationPlatform = DeviceInformationPlatformEnum.xbox;
 
     expect(iosDeviceInfo).toBe('iOS');
     expect(androidDeviceInfo).toBe('Android');
@@ -538,7 +573,7 @@ describe('Event Server Models', () => {
     expect(xboxDeviceInfo).toBe('xbox');
 
     const networkEvent: NetworkPerformanceEvent = {
-      event_type: 'network_performance',
+      event_type: NetworkPerformanceEventEventTypeEnum.networkPerformance,
       data: {
         http_verb: 'POST',
         url: 'mparticle.test',
@@ -577,7 +612,7 @@ describe('Event Server Models', () => {
     expect(networkEvent).toBeDefined();
 
     const optOut: OptOutEvent = {
-      event_type: 'opt_out',
+      event_type: OptOutEventEnum.optOut,
       data: {
         is_opted_out: false,
         timestamp_unixtime_ms: 12313412345666,
@@ -609,23 +644,23 @@ describe('Event Server Models', () => {
     };
     expect(optOut).toBeDefined();
 
-    const unknownProductionActionEnum: ProductActionActionEnum = 'unknown';
-    const addToCartProductionActionEnum: ProductActionActionEnum =
-      'add_to_cart';
-    const removeFromCartProductionActionEnum: ProductActionActionEnum =
-      'remove_from_cart';
-    const checkoutProductionActionEnum: ProductActionActionEnum = 'checkout';
-    const checkoutOptionProductionActionEnum: ProductActionActionEnum =
-      'checkout_option';
-    const clickProductionActionEnum: ProductActionActionEnum = 'click';
-    const viewDetailProductionActionEnum: ProductActionActionEnum =
-      'view_detail';
-    const purchaseProductionActionEnum: ProductActionActionEnum = 'purchase';
-    const refundProductionActionEnum: ProductActionActionEnum = 'refund';
-    const addToWishlistProductionActionEnum: ProductActionActionEnum =
-      'add_to_wishlist';
-    const removeFromWishlistProductionActionEnum: ProductActionActionEnum =
-      'remove_from_wish_list';
+    const unknownProductionActionEnum: ProductActionAction = ProductActionActionEnum.unknown;
+    const addToCartProductionActionEnum: ProductActionAction =
+      ProductActionActionEnum.addToCart;
+    const removeFromCartProductionActionEnum: ProductActionAction =
+      ProductActionActionEnum.removeFromCart;
+    const checkoutProductionActionEnum: ProductActionAction = ProductActionActionEnum.checkout;
+    const checkoutOptionProductionActionEnum: ProductActionAction =
+      ProductActionActionEnum.checkoutOption;
+    const clickProductionActionEnum: ProductActionAction = ProductActionActionEnum.click;
+    const viewDetailProductionActionEnum: ProductActionAction =
+      ProductActionActionEnum.viewDetail;
+    const purchaseProductionActionEnum: ProductActionAction = ProductActionActionEnum.purchase;
+    const refundProductionActionEnum: ProductActionAction = ProductActionActionEnum.refund;
+    const addToWishlistProductionActionEnum: ProductActionAction =
+      ProductActionActionEnum.addToWishlist;
+    const removeFromWishlistProductionActionEnum: ProductActionAction =
+      ProductActionActionEnum.removeFromWishlist;
 
     expect(unknownProductionActionEnum).toBe('unknown');
     expect(addToCartProductionActionEnum).toBe('add_to_cart');
@@ -642,11 +677,11 @@ describe('Event Server Models', () => {
     );
 
     const profileEvent: ProfileEvent = {
-      event_type: 'profile',
+      event_type: ProfileEventEventTypeEnum.profile,
       data: {
         previous_mpid: 23421234124312,
         current_mpid: -12341889128911,
-        profile_event_type: 'signup',
+        profile_event_type: ProfileEventDataProfileEventTypeEnum.signup,
         timestamp_unixtime_ms: 12313412345666,
         event_id: 811987881991001,
         source_message_id: 'the-source',
@@ -676,15 +711,15 @@ describe('Event Server Models', () => {
     };
     expect(profileEvent).toBeDefined();
 
-    const signupProfileEventEnum: ProfileEventDataProfileEventTypeEnum =
-      'signup';
-    const loginProfileEventEnum: ProfileEventDataProfileEventTypeEnum = 'login';
-    const logoutProfileEventEnum: ProfileEventDataProfileEventTypeEnum =
-      'logout';
-    const updateProfileEventEnum: ProfileEventDataProfileEventTypeEnum =
-      'update';
-    const deleteProfileEventEnum: ProfileEventDataProfileEventTypeEnum =
-      'delete';
+    const signupProfileEventEnum: ProfileEventDataProfileEventType =
+      ProfileEventDataProfileEventTypeEnum.signup;
+    const loginProfileEventEnum: ProfileEventDataProfileEventType = ProfileEventDataProfileEventTypeEnum.login;
+    const logoutProfileEventEnum: ProfileEventDataProfileEventType =
+      ProfileEventDataProfileEventTypeEnum.logout;
+    const updateProfileEventEnum: ProfileEventDataProfileEventType =
+      ProfileEventDataProfileEventTypeEnum.update;
+    const deleteProfileEventEnum: ProfileEventDataProfileEventType =
+      ProfileEventDataProfileEventTypeEnum.delete;
 
     expect(signupProfileEventEnum).toBe('signup');
     expect(loginProfileEventEnum).toBe('login');
@@ -692,23 +727,23 @@ describe('Event Server Models', () => {
     expect(updateProfileEventEnum).toBe('update');
     expect(deleteProfileEventEnum).toBe('delete');
 
-    const clickPromotionActionEnum: PromotionActionActionEnum = 'click';
-    const viewPromotionActionEnum: PromotionActionActionEnum = 'view';
+    const clickPromotionActionEnum: PromotionActionAction = PromotionActionActionEnum.click;
+    const viewPromotionActionEnum: PromotionActionAction = PromotionActionActionEnum.view;
 
     expect(clickPromotionActionEnum).toBe('click');
     expect(viewPromotionActionEnum).toBe('view');
 
     const pushMessageEvent: PushMessageEvent = {
-      event_type: 'push_message',
+      event_type: PushMessageEventEventTypeEnum.pushMessage,
       data: {
         push_message_token: 'some-token-value',
-        push_message_type: 'sent',
+        push_message_type: PushMessageEventDataPushMessageTypeEnum.sent,
         message: 'I sent a token',
         network: 'tcpip',
         push_notification_payload: 'a buck fifty',
-        application_state: 'foreground',
+        application_state: PushMessageEventDataApplicationStateEnum.foreground,
         action_identifier: 'foo-bar-baz-fizz-buzz',
-        push_message_behavior: 'Received',
+        push_message_behavior: PushMessageEventDataPushMessageBehaviorEnum.received,
         timestamp_unixtime_ms: 12313412345666,
         event_id: 811987881991001,
         source_message_id: 'the-source',
@@ -738,37 +773,37 @@ describe('Event Server Models', () => {
     };
     expect(pushMessageEvent).toBeDefined();
 
-    const sentPushMessageEnum: PushMessageEventDataPushMessageTypeEnum = 'sent';
-    const receivedPushMessageEnum: PushMessageEventDataPushMessageTypeEnum =
-      'received';
-    const actionPushMessageEnum: PushMessageEventDataPushMessageTypeEnum =
-      'action';
+    const sentPushMessageEnum: PushMessageEventDataPushMessageType = PushMessageEventDataPushMessageTypeEnum.sent;
+    const receivedPushMessageEnum: PushMessageEventDataPushMessageType =
+    PushMessageEventDataPushMessageTypeEnum.received;
+    const actionPushMessageEnum: PushMessageEventDataPushMessageType =
+    PushMessageEventDataPushMessageTypeEnum.action;
 
     expect(sentPushMessageEnum).toBe('sent');
     expect(receivedPushMessageEnum).toBe('received');
     expect(actionPushMessageEnum).toBe('action');
 
-    const notRunningPushMessageStateEnum: PushMessageEventDataApplicationStateEnum =
-      'not_running';
-    const backgroundPushMessageStateEnum: PushMessageEventDataApplicationStateEnum =
-      'background';
-    const foregroundPushMessageStateEnum: PushMessageEventDataApplicationStateEnum =
-      'foreground';
+    const notRunningPushMessageStateEnum: PushMessageEventDataApplicationState =
+    PushMessageEventDataApplicationStateEnum.notRunning;
+    const backgroundPushMessageStateEnum: PushMessageEventDataApplicationState =
+    PushMessageEventDataApplicationStateEnum.background;
+    const foregroundPushMessageStateEnum: PushMessageEventDataApplicationState =
+    PushMessageEventDataApplicationStateEnum.foreground;
 
     expect(notRunningPushMessageStateEnum).toBe('not_running');
     expect(backgroundPushMessageStateEnum).toBe('background');
     expect(foregroundPushMessageStateEnum).toBe('foreground');
 
-    const receivedPushMessageBehaviorEnum: PushMessageEventDataPushMessageBehaviorEnum =
-      'Received';
-    const directOpenPushMessageBehaviorEnum: PushMessageEventDataPushMessageBehaviorEnum =
-      'DirectOpen';
-    const readPushMessageBehaviorEnum: PushMessageEventDataPushMessageBehaviorEnum =
-      'Read';
-    const influencedOpenPushMessageBehaviorEnum: PushMessageEventDataPushMessageBehaviorEnum =
-      'InfluencedOpen';
-    const displayedPushMessageBehaviorEnum: PushMessageEventDataPushMessageBehaviorEnum =
-      'Displayed';
+    const receivedPushMessageBehaviorEnum: PushMessageEventDataPushMessageBehavior =
+    PushMessageEventDataPushMessageBehaviorEnum.received;
+    const directOpenPushMessageBehaviorEnum: PushMessageEventDataPushMessageBehavior =
+    PushMessageEventDataPushMessageBehaviorEnum.directOpen;
+    const readPushMessageBehaviorEnum: PushMessageEventDataPushMessageBehavior =
+    PushMessageEventDataPushMessageBehaviorEnum.read;
+    const influencedOpenPushMessageBehaviorEnum: PushMessageEventDataPushMessageBehavior =
+    PushMessageEventDataPushMessageBehaviorEnum.influencedOpen;
+    const displayedPushMessageBehaviorEnum: PushMessageEventDataPushMessageBehavior =
+    PushMessageEventDataPushMessageBehaviorEnum.displayed;
 
     expect(receivedPushMessageBehaviorEnum).toBe('Received');
     expect(directOpenPushMessageBehaviorEnum).toBe('DirectOpen');
@@ -777,7 +812,7 @@ describe('Event Server Models', () => {
     expect(displayedPushMessageBehaviorEnum).toBe('Displayed');
 
     const pushRegistrationEvent: PushRegistrationEvent = {
-      event_type: 'push_registration',
+      event_type: PushRegistrationEventEventTypeEnum.pushRegistration,
       data: {
         register: true,
         registration_token: 'qwerqwerqvqwerqoiytqoiupoqe',
@@ -811,7 +846,7 @@ describe('Event Server Models', () => {
     expect(pushRegistrationEvent).toBeDefined();
 
     const screenViewEvent: ScreenViewEvent = {
-      event_type: 'screen_view',
+      event_type: ScreenViewEventEventTypeEnum.screenView,
       data: {
         screen_name: 'aol',
         activity_type: 'instant message',
@@ -848,7 +883,7 @@ describe('Event Server Models', () => {
     expect(screenViewEvent).toBeDefined();
 
     const sessionEndEvent: SessionEndEvent = {
-      event_type: 'session_end',
+      event_type: SessionEndEventEventTypeEnum.sessionEnd,
       data: {
         session_duration_ms: 1234132,
         timestamp_unixtime_ms: 12313412345666,
@@ -881,7 +916,7 @@ describe('Event Server Models', () => {
     expect(sessionEndEvent).toBeDefined();
 
     const sessionStartEvent: SessionStartEvent = {
-      event_type: 'session_start',
+      event_type: SessionStartEventEventTypeEnum.sessionStart,
       data: {
         timestamp_unixtime_ms: 12313412345666,
         event_id: 811987881991001,
@@ -912,12 +947,12 @@ describe('Event Server Models', () => {
     };
     expect(sessionStartEvent).toBeDefined();
 
-    const nativeSourceInfoEnum: SourceInformationChannelEnum = 'native';
-    const jsSourceInfoEnum: SourceInformationChannelEnum = 'javascript';
-    const pixelSourceInfoEnum: SourceInformationChannelEnum = 'pixel';
-    const desktopSourceInfoEnum: SourceInformationChannelEnum = 'desktop';
-    const partnerSourceInfoEnum: SourceInformationChannelEnum = 'partner';
-    const s2sSourceInfoEnum: SourceInformationChannelEnum = 'server_to_server';
+    const nativeSourceInfoEnum: SourceInformationChannel = SourceInformationChannelEnum.native;
+    const jsSourceInfoEnum: SourceInformationChannel = SourceInformationChannelEnum.javascript;
+    const pixelSourceInfoEnum: SourceInformationChannel = SourceInformationChannelEnum.pixel;
+    const desktopSourceInfoEnum: SourceInformationChannel = SourceInformationChannelEnum.desktop;
+    const partnerSourceInfoEnum: SourceInformationChannel = SourceInformationChannelEnum.partner;
+    const s2sSourceInfoEnum: SourceInformationChannel = SourceInformationChannelEnum.serverToServer;
 
     expect(nativeSourceInfoEnum).toBe('native');
     expect(jsSourceInfoEnum).toBe('javascript');
@@ -927,7 +962,7 @@ describe('Event Server Models', () => {
     expect(s2sSourceInfoEnum).toBe('server_to_server');
 
     const userAttributeChangeEvent: UserAttributeChangeEvent = {
-      event_type: 'user_attribute_change',
+      event_type: UserAttributeChangeEventEventTypeEnum.userAttributeChange,
       data: {
         user_attribute_name: 'shoe size',
         new: '8.5',
@@ -964,16 +999,16 @@ describe('Event Server Models', () => {
     expect(userAttributeChangeEvent).toBeDefined();
 
     const userIdentityChangeEvent: UserIdentityChangeEvent = {
-      event_type: 'user_identity_change',
+      event_type: UserIdentityChangeEventEventTypeEnum.userIdentityChange,
       data: {
         old: {
-          identity_type: 'customer_id',
+          identity_type: IdentityTypeEnum.customerId,
           identity: 'Steve Rogers',
           timestamp_unixtime_ms: 1918,
           created_this_batch: false
         },
         new: {
-          identity_type: 'alias',
+          identity_type: IdentityTypeEnum.alias,
           identity: 'Captain America',
           timestamp_unixtime_ms: 1945,
           created_this_batch: false

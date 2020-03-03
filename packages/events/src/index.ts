@@ -11,22 +11,40 @@ export interface ApplicationInformation {
 /**
  * Enum for the os property.
  */
-export type ApplicationInformationOsEnum =
-    | 'Unknown'
-    | 'IOS'
-    | 'Android'
-    | 'WindowsPhone'
-    | 'MobileWeb'
-    | 'UnityIOS'
-    | 'UnityAndroid'
-    | 'Desktop'
-    | 'TVOS'
-    | 'Roku'
-    | 'OutOfBand'
-    | 'Alexa'
-    | 'SmartTV'
-    | 'FireTV'
-    | 'Xbox';
+export enum ApplicationInformationOsEnum {
+    unknown = 'Unknown',
+    iOS = 'IOS',
+    android = 'Android',
+    windowsPhone = 'WindowsPhone',
+    mobileWeb = 'MobileWeb',
+    unityIOS = 'UnityIOS',
+    unityAndroid = 'UnityAndroid',
+    desktop = 'Desktop',
+    tvOS = 'TVOS',
+    roku = 'Roku',
+    outOfBand = 'OutOfBand',
+    alexa = 'Alexa',
+    smartTV = 'SmartTV',
+    fireTV = 'FireTV',
+    xbox = 'Xbox',
+}
+
+export type ApplicationInformationOs =
+    | ApplicationInformationOsEnum.unknown
+    | ApplicationInformationOsEnum.iOS
+    | ApplicationInformationOsEnum.android
+    | ApplicationInformationOsEnum.windowsPhone
+    | ApplicationInformationOsEnum.mobileWeb
+    | ApplicationInformationOsEnum.unityIOS
+    | ApplicationInformationOsEnum.unityAndroid
+    | ApplicationInformationOsEnum.desktop
+    | ApplicationInformationOsEnum.tvOS
+    | ApplicationInformationOsEnum.roku
+    | ApplicationInformationOsEnum.outOfBand
+    | ApplicationInformationOsEnum.alexa
+    | ApplicationInformationOsEnum.smartTV
+    | ApplicationInformationOsEnum.fireTV
+    | ApplicationInformationOsEnum.xbox;
 
 export interface ApplicationStateTransitionEvent {
     data?: ApplicationStateTransitionEventData;
@@ -36,7 +54,11 @@ export interface ApplicationStateTransitionEvent {
 /**
  * Enum for the event_type property.
  */
-export type ApplicationStateTransitionEventEventTypeEnum = 'application_state_transition';
+export enum ApplicationStateTransitionEventEventTypeEnum {
+    applicationStateTransition = 'application_state_transition',
+}
+
+export type ApplicationStateTransitionEventEventType = ApplicationStateTransitionEventEventTypeEnum.applicationStateTransition;
 
 export interface ApplicationStateTransitionEventData extends CommonEventData {
     successfully_closed?: boolean;
@@ -50,11 +72,18 @@ export interface ApplicationStateTransitionEventData extends CommonEventData {
 /**
  * Enum for the application_transition_type property.
  */
-export type ApplicationStateTransitionEventDataApplicationTransitionTypeEnum =
-    | 'application_initialized'
-    | 'application_exit'
-    | 'application_background'
-    | 'application_foreground';
+export enum ApplicationStateTransitionEventDataApplicationTransitionTypeEnum {
+    applicationInitialized = 'application_initialized',
+    applicationExit = 'application_exit',
+    applicationBackground = 'application_background',
+    applicationForeground = 'application_foreground',
+}
+
+export type ApplicationStateTransitionEventDataApplicationTransitionType =
+    | ApplicationStateTransitionEventDataApplicationTransitionTypeEnum.applicationInitialized
+    | ApplicationStateTransitionEventDataApplicationTransitionTypeEnum.applicationExit
+    | ApplicationStateTransitionEventDataApplicationTransitionTypeEnum.applicationBackground
+    | ApplicationStateTransitionEventDataApplicationTransitionTypeEnum.applicationForeground;
 
 export interface AttributionInfo {
     service_provider: string;
@@ -99,7 +128,13 @@ export interface Batch {
 /**
  * Enum for the environment property.
  */
-export type BatchEnvironmentEnum = 'unknown' | 'development' | 'production';
+export enum BatchEnvironmentEnum {
+    unknown = 'unknown',
+    development = 'development',
+    production = 'production',
+}
+
+export type BatchEnvironment = 'unknown' | 'development' | 'production';
 
 export interface BatchUserIdentities {
     other?: string;
@@ -125,7 +160,10 @@ export interface BreadcrumbEvent {
 /**
  * Enum for the event_type property.
  */
-export type BreadcrumbEventEventTypeEnum = 'breadcrumb';
+export enum BreadcrumbEventEventTypeEnum {
+    breadcrumb = 'breadcrumb',
+}
+export type BreadcrumbEventEventType = BreadcrumbEventEventTypeEnum.breadcrumb;
 
 export interface BreakcrumbEventData extends CommonEventData {
     session_number?: number;
@@ -142,7 +180,10 @@ export interface CommerceEvent {
 /**
  * Enum for the event_type property.
  */
-export type CommerceEventEventTypeEnum = 'commerce_event';
+export enum CommerceEventEventTypeEnum {
+    commerceEvent = 'commerce_event',
+}
+export type CommerceEventEventType = CommerceEventEventTypeEnum.commerceEvent;
 
 export interface CommerceEventData extends CommonEventData {
     product_action?: ProductAction;
@@ -160,20 +201,36 @@ export interface CommerceEventData extends CommonEventData {
 /**
  * Enum for the custom_event_type property.
  */
-export type CommerceEventDataCustomEventTypeEnum =
-    | 'add_to_cart'
-    | 'remove_from_cart'
-    | 'checkout'
-    | 'checkout_option'
-    | 'click'
-    | 'view_detail'
-    | 'purchase'
-    | 'refund'
-    | 'promotion_view'
-    | 'promotion_click'
-    | 'add_to_wishlist'
-    | 'remove_from_wishlist'
-    | 'impression';
+export enum CommerceEventDataCustomEventTypeEnum {
+    addToCart = 'add_to_cart',
+    removeFromCart = 'remove_from_cart',
+    checkout = 'checkout',
+    checkoutOption = 'checkout_option',
+    click = 'click',
+    viewDetail = 'view_detail',
+    purchase = 'purchase',
+    refund = 'refund',
+    promotionView = 'promotion_view',
+    promotionClick = 'promotion_click',
+    addToWishlist = 'add_to_wishlist',
+    removeFromWishList = 'remove_from_wishlist',
+    impression = 'impression',
+}
+
+export type CommerceEventDataCustomEventType =
+    | CommerceEventDataCustomEventTypeEnum.addToCart
+    | CommerceEventDataCustomEventTypeEnum.removeFromCart
+    | CommerceEventDataCustomEventTypeEnum.checkout
+    | CommerceEventDataCustomEventTypeEnum.checkoutOption
+    | CommerceEventDataCustomEventTypeEnum.click
+    | CommerceEventDataCustomEventTypeEnum.viewDetail
+    | CommerceEventDataCustomEventTypeEnum.purchase
+    | CommerceEventDataCustomEventTypeEnum.refund
+    | CommerceEventDataCustomEventTypeEnum.promotionView
+    | CommerceEventDataCustomEventTypeEnum.promotionClick
+    | CommerceEventDataCustomEventTypeEnum.addToWishlist
+    | CommerceEventDataCustomEventTypeEnum.removeFromWishList
+    | CommerceEventDataCustomEventTypeEnum.impression;
 
 export interface CommonEventData {
     timestamp_unixtime_ms?: number;
@@ -210,7 +267,11 @@ export interface CrashReportEvent {
 /**
  * Enum for the event_type property.
  */
-export type CrashReportEventEventTypeEnum = 'crash_report';
+export enum CrashReportEventEventTypeEnum {
+    crashReport = 'crash_report',
+}
+
+export type CrashReportEventEventType = CrashReportEventEventTypeEnum.crashReport;
 
 export interface CrashReportEventData extends CommonEventData {
     breadcrumbs?: string[];
@@ -234,7 +295,10 @@ export interface CustomEvent {
 /**
  * Enum for the event_type property.
  */
-export type CustomEventEventTypeEnum = 'custom_event';
+export enum CustomEventEventTypeEnum {
+    customEvent = 'custom_event',
+}
+export type CustomEventEventType = CustomEventEventTypeEnum.customEvent;
 
 export interface CustomEventData extends CommonEventData {
     custom_event_type: CustomEventDataCustomEventTypeEnum;
@@ -245,16 +309,27 @@ export interface CustomEventData extends CommonEventData {
 /**
  * Enum for the custom_event_type property.
  */
-export type CustomEventDataCustomEventTypeEnum =
-    | 'unknown'
-    | 'navigation'
-    | 'location'
-    | 'search'
-    | 'transaction'
-    | 'user_content'
-    | 'user_preference'
-    | 'social'
-    | 'other';
+export enum CustomEventDataCustomEventTypeEnum {
+    navigation = 'navigation',
+    location = 'location',
+    search = 'search',
+    transaction = 'transaction',
+    userContent = 'user_content',
+    userPreference = 'user_preference',
+    social = 'social',
+    other = 'other',
+    unknown = 'unknown',
+}
+export type CustomEventDataCustomEventType =
+    | CustomEventDataCustomEventTypeEnum.navigation
+    | CustomEventDataCustomEventTypeEnum.location
+    | CustomEventDataCustomEventTypeEnum.search
+    | CustomEventDataCustomEventTypeEnum.transaction
+    | CustomEventDataCustomEventTypeEnum.userContent
+    | CustomEventDataCustomEventTypeEnum.userPreference
+    | CustomEventDataCustomEventTypeEnum.social
+    | CustomEventDataCustomEventTypeEnum.other
+    | CustomEventDataCustomEventTypeEnum.unknown;
 
 export interface DeviceCurrentState {
     time_since_start_ms?: number;
@@ -279,28 +354,50 @@ export interface DeviceCurrentState {
 /**
  * Enum for the device_orientation property.
  */
-export type DeviceCurrentStateDeviceOrientationEnum =
-    | 'portrait'
-    | 'portrait_upside_down'
-    | 'landscape'
-    | 'LandscapeLeft'
-    | 'LandscapeRight'
-    | 'FaceUp'
-    | 'FaceDown'
-    | 'Square';
+export enum DeviceCurrentStateDeviceOrientationEnum {
+    portrait = 'portrait',
+    portraitUpsideDown = 'portrait_upside_down',
+    landscape = 'landscape',
+    landscapeLeft = 'LandscapeLeft',
+    landscapeRight = 'LandscapeRight',
+    faceUp = 'FaceUp',
+    faceDown = 'FaceDown',
+    square = 'Square',
+}
+
+export type DeviceCurrentStateDeviceOrientation =
+    | DeviceCurrentStateDeviceOrientationEnum.portrait
+    | DeviceCurrentStateDeviceOrientationEnum.portraitUpsideDown
+    | DeviceCurrentStateDeviceOrientationEnum.landscape
+    | DeviceCurrentStateDeviceOrientationEnum.landscapeLeft
+    | DeviceCurrentStateDeviceOrientationEnum.landscapeRight
+    | DeviceCurrentStateDeviceOrientationEnum.faceUp
+    | DeviceCurrentStateDeviceOrientationEnum.faceDown
+    | DeviceCurrentStateDeviceOrientationEnum.square;
 
 /**
  * Enum for the status_bar_orientation property.
  */
-export type DeviceCurrentStateStatusBarOrientationEnum =
-    | 'portrait'
-    | 'portrait_upside_down'
-    | 'landscape'
-    | 'LandscapeLeft'
-    | 'LandscapeRight'
-    | 'FaceUp'
-    | 'FaceDown'
-    | 'Square';
+export enum DeviceCurrentStateStatusBarOrientationEnum {
+    portrait = 'portrait',
+    portraitUpsideDown = 'portrait_upside_down',
+    landscape = 'landscape',
+    landscapeLeft = 'LandscapeLeft',
+    landscapeRight = 'LandscapeRight',
+    faceUp = 'FaceUp',
+    faceDown = 'FaceDown',
+    square = 'Square',
+}
+
+export type DeviceCurrentStateStatusBarOrientation =
+    | DeviceCurrentStateStatusBarOrientationEnum.portrait
+    | DeviceCurrentStateStatusBarOrientationEnum.portraitUpsideDown
+    | DeviceCurrentStateStatusBarOrientationEnum.landscape
+    | DeviceCurrentStateStatusBarOrientationEnum.landscapeLeft
+    | DeviceCurrentStateStatusBarOrientationEnum.landscapeRight
+    | DeviceCurrentStateStatusBarOrientationEnum.faceUp
+    | DeviceCurrentStateStatusBarOrientationEnum.faceDown
+    | DeviceCurrentStateStatusBarOrientationEnum.square;
 
 export interface Context {
     data_plan: {
@@ -358,16 +455,28 @@ export interface DeviceInformation {
 /**
  * Enum for the platform property.
  */
-export type DeviceInformationPlatformEnum =
-    | 'iOS'
-    | 'Android'
-    | 'web'
-    | 'desktop'
-    | 'tvOS'
-    | 'roku'
-    | 'out_of_band'
-    | 'smart_tv'
-    | 'xbox';
+export enum DeviceInformationPlatformEnum {
+    iOS = 'iOS',
+    android = 'Android',
+    web = 'web',
+    desktop = 'desktop',
+    tvOS = 'tvOS',
+    roku = 'roku',
+    outOfBand = 'out_of_band',
+    smartTV = 'smart_tv',
+    xbox = 'xbox',
+}
+
+export type DeviceInformationPlatform =
+    | DeviceInformationPlatformEnum.iOS
+    | DeviceInformationPlatformEnum.android
+    | DeviceInformationPlatformEnum.web
+    | DeviceInformationPlatformEnum.desktop
+    | DeviceInformationPlatformEnum.tvOS
+    | DeviceInformationPlatformEnum.roku
+    | DeviceInformationPlatformEnum.outOfBand
+    | DeviceInformationPlatformEnum.smartTV
+    | DeviceInformationPlatformEnum.xbox;
 
 export interface EventSystemNotificationInfo {
     type: EventSystemNotificationInfoTypeEnum;
@@ -378,27 +487,50 @@ export interface EventSystemNotificationInfo {
  */
 export type EventSystemNotificationInfoTypeEnum = 'gdpr_change';
 
+export enum EventTypeEnum {
+    unknown = 'unknown',
+    sessionStart = 'session_start',
+    sessionEnd = 'session_end',
+    screenView = 'screen_view',
+    customEvent = 'custom_event',
+    crashReport = 'crash_report',
+    optOut = 'opt_out',
+    firstRun = 'first_run',
+    preAttribution = 'pre_attribution',
+    pushRegistration = 'push_registration',
+    applicationStateTransition = 'application_state_transition',
+    pushMessage = 'push_message',
+    networkPerformance = 'network_performance',
+    breadcrumb = 'breadcrumb',
+    profile = 'profile',
+    pushReaction = 'push_reaction',
+    commerceEvent = 'commerce_event',
+    userAttributeChange = 'user_attribute_change',
+    userIdentityChange = 'user_identity_change',
+    uninstall = 'uninstall',
+}
+
 export type EventType =
-    | 'unknown'
-    | 'session_start'
-    | 'session_end'
-    | 'screen_view'
-    | 'custom_event'
-    | 'crash_report'
-    | 'opt_out'
-    | 'first_run'
-    | 'pre_attribution'
-    | 'push_registration'
-    | 'application_state_transition'
-    | 'push_message'
-    | 'network_performance'
-    | 'breadcrumb'
-    | 'profile'
-    | 'push_reaction'
-    | 'commerce_event'
-    | 'user_attribute_change'
-    | 'user_identity_change'
-    | 'uninstall';
+    | EventTypeEnum.unknown
+    | EventTypeEnum.sessionStart
+    | EventTypeEnum.sessionEnd
+    | EventTypeEnum.screenView
+    | EventTypeEnum.customEvent
+    | EventTypeEnum.crashReport
+    | EventTypeEnum.optOut
+    | EventTypeEnum.firstRun
+    | EventTypeEnum.preAttribution
+    | EventTypeEnum.pushRegistration
+    | EventTypeEnum.applicationStateTransition
+    | EventTypeEnum.pushMessage
+    | EventTypeEnum.networkPerformance
+    | EventTypeEnum.breadcrumb
+    | EventTypeEnum.profile
+    | EventTypeEnum.pushReaction
+    | EventTypeEnum.commerceEvent
+    | EventTypeEnum.userAttributeChange
+    | EventTypeEnum.userIdentityChange
+    | EventTypeEnum.uninstall;
 
 export interface GDPRConsentState {
     purpose?: string;
@@ -415,20 +547,37 @@ export interface GeoLocation {
     accuracy?: number | string;
 }
 
-export type identityType =
-    | 'other'
-    | 'customer_id'
-    | 'facebook'
-    | 'twitter'
-    | 'google'
-    | 'microsoft'
-    | 'yahoo'
-    | 'email'
-    | 'alias'
-    | 'facebook_custom_audience_id'
-    | 'other_id_2'
-    | 'other_id_3'
-    | 'other_id_4';
+export enum IdentityTypeEnum {
+    other = 'other',
+    customerId = 'customer_id',
+    facebook = 'facebook',
+    twitter = 'twitter',
+    google = 'google',
+    microsoft = 'microsoft',
+    yahoo = 'yahoo',
+    email = 'email',
+    alias = 'alias',
+    facebookCustomAudienceId = 'facebook_custom_audience_id',
+    otherId2 = 'other_id_2',
+    otherId3 = 'other_id_3',
+    otherId4 = 'other_id_4',
+}
+
+export type IdentityType =
+    | IdentityTypeEnum.other
+    | IdentityTypeEnum.customerId
+    | IdentityTypeEnum.facebook
+    | IdentityTypeEnum.twitter
+    | IdentityTypeEnum.google
+    | IdentityTypeEnum.microsoft
+    | IdentityTypeEnum.yahoo
+    | IdentityTypeEnum.email
+    | IdentityTypeEnum.alias
+    | IdentityTypeEnum.facebookCustomAudienceId
+    | IdentityTypeEnum.otherId2
+    | IdentityTypeEnum.otherId3
+    | IdentityTypeEnum.otherId4;
+
 export interface NetworkPerformanceEvent {
     data?: NetworkPerformanceEventData;
     event_type: NetworkPerformanceEventEventTypeEnum;
@@ -437,7 +586,11 @@ export interface NetworkPerformanceEvent {
 /**
  * Enum for the event_type property.
  */
-export type NetworkPerformanceEventEventTypeEnum = 'network_performance';
+export enum NetworkPerformanceEventEventTypeEnum {
+    networkPerformance = 'network_performance',
+}
+
+export type NetworkPerformanceEventEventType = NetworkPerformanceEventEventTypeEnum.networkPerformance;
 
 export interface NetworkPerformanceEventData extends CommonEventData {
     http_verb?: string;
@@ -451,13 +604,16 @@ export interface NetworkPerformanceEventData extends CommonEventData {
 
 export interface OptOutEvent {
     data?: OptOutEventData;
-    event_type: OptOutEventEventTypeEnum;
+    event_type: OptOutEventEnum;
 }
 
 /**
  * Enum for the event_type property.
  */
-export type OptOutEventEventTypeEnum = 'opt_out';
+export enum OptOutEventEnum {
+    optOut = 'opt_out',
+}
+export type OptOutEventEventType = OptOutEventEnum.optOut;
 
 export interface OptOutEventData extends CommonEventData {
     is_opted_out: boolean;
@@ -496,18 +652,32 @@ export interface ProductAction {
 /**
  * Enum for the action property.
  */
-export type ProductActionActionEnum =
-    | 'unknown'
-    | 'add_to_cart'
-    | 'remove_from_cart'
-    | 'checkout'
-    | 'checkout_option'
-    | 'click'
-    | 'view_detail'
-    | 'purchase'
-    | 'refund'
-    | 'add_to_wishlist'
-    | 'remove_from_wish_list';
+export enum ProductActionActionEnum {
+    unknown = 'unknown',
+    addToCart = 'add_to_cart',
+    removeFromCart = 'remove_from_cart',
+    checkout = 'checkout',
+    checkoutOption = 'checkout_option',
+    click = 'click',
+    viewDetail = 'view_detail',
+    purchase = 'purchase',
+    refund = 'refund',
+    addToWishlist = 'add_to_wishlist',
+    removeFromWishlist = 'remove_from_wish_list',
+}
+
+export type ProductActionAction =
+    | ProductActionActionEnum.unknown
+    | ProductActionActionEnum.addToCart
+    | ProductActionActionEnum.removeFromCart
+    | ProductActionActionEnum.checkout
+    | ProductActionActionEnum.checkoutOption
+    | ProductActionActionEnum.click
+    | ProductActionActionEnum.viewDetail
+    | ProductActionActionEnum.purchase
+    | ProductActionActionEnum.refund
+    | ProductActionActionEnum.addToWishlist
+    | ProductActionActionEnum.removeFromWishlist;
 
 export interface ProductImpression {
     product_impression_list?: string;
@@ -522,7 +692,10 @@ export interface ProfileEvent {
 /**
  * Enum for the event_type property.
  */
-export type ProfileEventEventTypeEnum = 'profile';
+export enum ProfileEventEventTypeEnum {
+    profile = 'profile',
+}
+export type ProfileEventEventType = ProfileEventEventTypeEnum.profile;
 
 export interface ProfileEventData extends CommonEventData {
     previous_mpid: number;
@@ -533,12 +706,20 @@ export interface ProfileEventData extends CommonEventData {
 /**
  * Enum for the profile_event_type property.
  */
-export type ProfileEventDataProfileEventTypeEnum =
-    | 'signup'
-    | 'login'
-    | 'logout'
-    | 'update'
-    | 'delete';
+export enum ProfileEventDataProfileEventTypeEnum {
+    signup = 'signup',
+    login = 'login',
+    logout = 'logout',
+    update = 'update',
+    delete = 'delete',
+}
+
+export type ProfileEventDataProfileEventType =
+    | ProfileEventDataProfileEventTypeEnum.signup
+    | ProfileEventDataProfileEventTypeEnum.login
+    | ProfileEventDataProfileEventTypeEnum.logout
+    | ProfileEventDataProfileEventTypeEnum.update
+    | ProfileEventDataProfileEventTypeEnum.delete;
 
 export interface Promotion {
     id: string;
@@ -555,7 +736,13 @@ export interface PromotionAction {
 /**
  * Enum for the action property.
  */
-export type PromotionActionActionEnum = 'view' | 'click';
+export enum PromotionActionActionEnum {
+    view = 'view',
+    click = 'click',
+}
+export type PromotionActionAction =
+    | PromotionActionActionEnum.view
+    | PromotionActionActionEnum.click;
 
 export interface PushMessageEvent {
     data?: PushMessageEventData;
@@ -565,7 +752,10 @@ export interface PushMessageEvent {
 /**
  * Enum for the event_type property.
  */
-export type PushMessageEventEventTypeEnum = 'push_message';
+export enum PushMessageEventEventTypeEnum {
+    pushMessage = 'push_message',
+}
+export type PushMessageEventEventType = PushMessageEventEventTypeEnum.pushMessage;
 
 export interface PushMessageEventData extends CommonEventData {
     push_message_token: string;
@@ -581,28 +771,48 @@ export interface PushMessageEventData extends CommonEventData {
 /**
  * Enum for the push_message_type property.
  */
-export type PushMessageEventDataPushMessageTypeEnum =
-    | 'sent'
-    | 'received'
-    | 'action';
+export enum PushMessageEventDataPushMessageTypeEnum {
+    sent = 'sent',
+    received = 'received',
+    action = 'action',
+}
+
+export type PushMessageEventDataPushMessageType =
+    | PushMessageEventDataPushMessageTypeEnum.sent
+    | PushMessageEventDataPushMessageTypeEnum.received
+    | PushMessageEventDataPushMessageTypeEnum.action;
 
 /**
  * Enum for the application_state property.
  */
-export type PushMessageEventDataApplicationStateEnum =
-    | 'not_running'
-    | 'background'
-    | 'foreground';
+export enum PushMessageEventDataApplicationStateEnum {
+    notRunning = 'not_running',
+    background = 'background',
+    foreground = 'foreground',
+}
+
+export type PushMessageEventDataApplicationState =
+    | PushMessageEventDataApplicationStateEnum.notRunning
+    | PushMessageEventDataApplicationStateEnum.background
+    | PushMessageEventDataApplicationStateEnum.foreground;
 
 /**
  * Enum for the push_message_behavior property.
  */
-export type PushMessageEventDataPushMessageBehaviorEnum =
-    | 'Received'
-    | 'DirectOpen'
-    | 'Read'
-    | 'InfluencedOpen'
-    | 'Displayed';
+export enum PushMessageEventDataPushMessageBehaviorEnum {
+    received = 'Received',
+    directOpen = 'DirectOpen',
+    read = 'Read',
+    influencedOpen = 'InfluencedOpen',
+    displayed = 'Displayed',
+}
+
+export type PushMessageEventDataPushMessageBehavior =
+    | PushMessageEventDataPushMessageBehaviorEnum.received
+    | PushMessageEventDataPushMessageBehaviorEnum.directOpen
+    | PushMessageEventDataPushMessageBehaviorEnum.read
+    | PushMessageEventDataPushMessageBehaviorEnum.influencedOpen
+    | PushMessageEventDataPushMessageBehaviorEnum.displayed;
 
 export interface PushRegistrationEvent {
     data?: PushRegistrationEventData;
@@ -612,7 +822,11 @@ export interface PushRegistrationEvent {
 /**
  * Enum for the event_type property.
  */
-export type PushRegistrationEventEventTypeEnum = 'push_registration';
+export enum PushRegistrationEventEventTypeEnum {
+    pushRegistration = 'push_registration',
+}
+
+export type PushRegistrationEventEventType = PushRegistrationEventEventTypeEnum.pushRegistration;
 
 export interface PushRegistrationEventData extends CommonEventData {
     register: boolean;
@@ -627,7 +841,11 @@ export interface ScreenViewEvent {
 /**
  * Enum for the event_type property.
  */
-export type ScreenViewEventEventTypeEnum = 'screen_view';
+export enum ScreenViewEventEventTypeEnum {
+    screenView = 'screen_view',
+}
+
+export type ScreenViewEventEventType = ScreenViewEventEventTypeEnum.screenView;
 
 export interface ScreenViewEventData extends CommonEventData {
     screen_name: string;
@@ -643,7 +861,11 @@ export interface SessionEndEvent {
 /**
  * Enum for the event_type property.
  */
-export type SessionEndEventEventTypeEnum = 'session_end';
+export enum SessionEndEventEventTypeEnum {
+    sessionEnd = 'session_end',
+}
+
+export type SessionEndEventEventType = SessionEndEventEventTypeEnum.sessionEnd;
 
 export interface SessionEndEventData extends CommonEventData {
     session_duration_ms: number;
@@ -657,7 +879,11 @@ export interface SessionStartEvent {
 /**
  * Enum for the event_type property.
  */
-export type SessionStartEventEventTypeEnum = 'session_start';
+export enum SessionStartEventEventTypeEnum {
+    sessionStart = 'session_start',
+}
+
+export type SessionStartEventEventType = SessionStartEventEventTypeEnum.sessionStart;
 
 export interface SessionStartEventData extends CommonEventData {}
 
@@ -676,13 +902,22 @@ export interface SourceInformation {
 /**
  * Enum for the channel property.
  */
-export type SourceInformationChannelEnum =
-    | 'native'
-    | 'javascript'
-    | 'pixel'
-    | 'desktop'
-    | 'partner'
-    | 'server_to_server';
+export enum SourceInformationChannelEnum {
+    native = 'native',
+    javascript = 'javascript',
+    pixel = 'pixel',
+    desktop = 'desktop',
+    partner = 'partner',
+    serverToServer = 'server_to_server',
+}
+
+export type SourceInformationChannel =
+    | SourceInformationChannelEnum.native
+    | SourceInformationChannelEnum.javascript
+    | SourceInformationChannelEnum.pixel
+    | SourceInformationChannelEnum.desktop
+    | SourceInformationChannelEnum.partner
+    | SourceInformationChannelEnum.serverToServer;
 
 export interface UserAttributeChangeEvent {
     data?: UserAttributeChangeEventData;
@@ -692,7 +927,11 @@ export interface UserAttributeChangeEvent {
 /**
  * Enum for the event_type property.
  */
-export type UserAttributeChangeEventEventTypeEnum = 'user_attribute_change';
+export enum UserAttributeChangeEventEventTypeEnum {
+    userAttributeChange = 'user_attribute_change',
+}
+
+export type UserAttributeChangeEventEventType = UserAttributeChangeEventEventTypeEnum.userAttributeChange;
 
 export interface UserAttributeChangeEventData extends CommonEventData {
     user_attribute_name: string;
@@ -703,7 +942,7 @@ export interface UserAttributeChangeEventData extends CommonEventData {
 }
 
 export interface UserIdentity {
-    identity_type: identityType;
+    identity_type: IdentityType;
     identity: string;
     timestamp_unixtime_ms: number;
     created_this_batch: boolean;
@@ -717,7 +956,11 @@ export interface UserIdentityChangeEvent {
 /**
  * Enum for the event_type property.
  */
-export type UserIdentityChangeEventEventTypeEnum = 'user_identity_change';
+export enum UserIdentityChangeEventEventTypeEnum {
+    userIdentityChange = 'user_identity_change',
+}
+
+export type UserIdentityChangeEventEventType = UserIdentityChangeEventEventTypeEnum.userIdentityChange;
 
 export interface UserIdentityChangeEventData extends CommonEventData {
     new: UserIdentity;
