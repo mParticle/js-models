@@ -1,6 +1,7 @@
 import { DataPlanMatch } from '../src/data_plan_match';
 import { DataPlanMatchType } from '../src/types';
 import { CustomEventCriteria } from '../src/criteria';
+import { CustomEventDataCustomEventTypeEnum } from '../../events/src';
 
 describe('Data Plan Match', () => {
     it('should be a valid DataPlanMatch', () => {
@@ -15,7 +16,7 @@ describe('Data Plan Match', () => {
     it('should allow criteria', () => {
         const criteria: CustomEventCriteria = {
             event_name: 'My Custom Event',
-            custom_event_type: 'location',
+            custom_event_type: CustomEventDataCustomEventTypeEnum.location,
         };
 
         const match: DataPlanMatch = {

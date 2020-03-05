@@ -48,7 +48,7 @@ export type ApplicationInformationOs =
 
 export interface ApplicationStateTransitionEvent {
     data?: ApplicationStateTransitionEventData;
-    event_type: ApplicationStateTransitionEventEventTypeEnum;
+    event_type: EventTypeEnum.applicationStateTransition;
 }
 
 /**
@@ -154,7 +154,7 @@ export interface BatchUserIdentities {
 
 export interface BreadcrumbEvent {
     data?: BreakcrumbEventData;
-    event_type: BreadcrumbEventEventTypeEnum;
+    event_type: EventTypeEnum.breadcrumb;
 }
 
 /**
@@ -174,7 +174,7 @@ export type CCPAConsentState = Omit<GDPRConsentState, 'purpose'>;
 
 export interface CommerceEvent {
     data?: CommerceEventData;
-    event_type: CommerceEventEventTypeEnum;
+    event_type: EventTypeEnum.commerceEvent;
 }
 
 /**
@@ -261,7 +261,7 @@ export interface ConsentState {
 
 export interface CrashReportEvent {
     data?: CrashReportEventData;
-    event_type: CrashReportEventEventTypeEnum;
+    event_type: EventTypeEnum.crashReport;
 }
 
 /**
@@ -289,7 +289,7 @@ export interface CrashReportEventData extends CommonEventData {
 
 export interface CustomEvent {
     data?: CustomEventData;
-    event_type: CustomEventEventTypeEnum;
+    event_type: EventTypeEnum.customEvent;
 }
 
 /**
@@ -508,6 +508,7 @@ export enum EventTypeEnum {
     userAttributeChange = 'user_attribute_change',
     userIdentityChange = 'user_identity_change',
     uninstall = 'uninstall',
+    validationResult = 'validation_result',
 }
 
 export type EventType =
@@ -530,7 +531,8 @@ export type EventType =
     | EventTypeEnum.commerceEvent
     | EventTypeEnum.userAttributeChange
     | EventTypeEnum.userIdentityChange
-    | EventTypeEnum.uninstall;
+    | EventTypeEnum.uninstall
+    | EventTypeEnum.validationResult;
 
 export interface GDPRConsentState {
     purpose?: string;
@@ -580,7 +582,7 @@ export type IdentityType =
 
 export interface NetworkPerformanceEvent {
     data?: NetworkPerformanceEventData;
-    event_type: NetworkPerformanceEventEventTypeEnum;
+    event_type: EventTypeEnum.networkPerformance;
 }
 
 /**
@@ -604,7 +606,7 @@ export interface NetworkPerformanceEventData extends CommonEventData {
 
 export interface OptOutEvent {
     data?: OptOutEventData;
-    event_type: OptOutEventEnum;
+    event_type: EventTypeEnum.optOut;
 }
 
 /**
@@ -686,7 +688,7 @@ export interface ProductImpression {
 
 export interface ProfileEvent {
     data?: ProfileEventData;
-    event_type: ProfileEventEventTypeEnum;
+    event_type: EventTypeEnum.profile;
 }
 
 /**
@@ -746,7 +748,7 @@ export type PromotionActionAction =
 
 export interface PushMessageEvent {
     data?: PushMessageEventData;
-    event_type: PushMessageEventEventTypeEnum;
+    event_type: EventTypeEnum.pushMessage;
 }
 
 /**
@@ -816,7 +818,7 @@ export type PushMessageEventDataPushMessageBehavior =
 
 export interface PushRegistrationEvent {
     data?: PushRegistrationEventData;
-    event_type: PushRegistrationEventEventTypeEnum;
+    event_type: EventTypeEnum.pushRegistration;
 }
 
 /**
@@ -835,17 +837,14 @@ export interface PushRegistrationEventData extends CommonEventData {
 
 export interface ScreenViewEvent {
     data?: ScreenViewEventData;
-    event_type: ScreenViewEventEventTypeEnum;
+    event_type: EventTypeEnum.screenView;
 }
 
 /**
  * Enum for the event_type property.
  */
-export enum ScreenViewEventEventTypeEnum {
-    screenView = 'screen_view',
-}
 
-export type ScreenViewEventEventType = ScreenViewEventEventTypeEnum.screenView;
+export type ScreenViewEventEventType = EventTypeEnum.screenView;
 
 export interface ScreenViewEventData extends CommonEventData {
     screen_name: string;
@@ -855,7 +854,7 @@ export interface ScreenViewEventData extends CommonEventData {
 
 export interface SessionEndEvent {
     data?: SessionEndEventData;
-    event_type: SessionEndEventEventTypeEnum;
+    event_type: EventTypeEnum.sessionEnd;
 }
 
 /**
@@ -873,7 +872,7 @@ export interface SessionEndEventData extends CommonEventData {
 
 export interface SessionStartEvent {
     data?: SessionStartEventData;
-    event_type: SessionStartEventEventTypeEnum;
+    event_type: EventTypeEnum.sessionStart;
 }
 
 /**
@@ -921,7 +920,7 @@ export type SourceInformationChannel =
 
 export interface UserAttributeChangeEvent {
     data?: UserAttributeChangeEventData;
-    event_type: UserAttributeChangeEventEventTypeEnum;
+    event_type: EventTypeEnum.userAttributeChange;
 }
 
 /**
@@ -950,7 +949,7 @@ export interface UserIdentity {
 
 export interface UserIdentityChangeEvent {
     data?: UserIdentityChangeEventData;
-    event_type: UserIdentityChangeEventEventTypeEnum;
+    event_type: EventTypeEnum.userIdentityChange;
 }
 
 /**

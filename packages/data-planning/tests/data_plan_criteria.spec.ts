@@ -17,6 +17,10 @@ import {
     UserIdentitiesCriteria,
 } from '../src/criteria';
 import { EventType, DataPlanMatchType } from '../src/types';
+import {
+    CustomEventDataCustomEventTypeEnum,
+    PromotionActionActionEnum,
+} from '@mparticle/event-models';
 
 describe('Data Plan Criteria', () => {
     it('returns a ApplicationStateTransition', () => {
@@ -38,7 +42,7 @@ describe('Data Plan Criteria', () => {
     it('returns a CustomEvent', () => {
         const criteria: CustomEventCriteria = {
             event_name: 'foo',
-            custom_event_type: EventType.Other,
+            custom_event_type: CustomEventDataCustomEventTypeEnum.other,
         };
         expect(criteria.event_name).toBe('foo');
         expect(criteria.custom_event_type).toBe('other');
@@ -73,7 +77,7 @@ describe('Data Plan Criteria', () => {
     });
     it('returns a PromotionAction', () => {
         const criteria: PromotionActionEventCriteria = {
-            action: 'click',
+            action: PromotionActionActionEnum.click,
         };
         expect(criteria.action).toBe('click');
     });

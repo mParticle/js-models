@@ -1,7 +1,7 @@
 import { Batch } from '@mparticle/event-models';
+import { ValidationResultEvent } from './validation_result_event';
 
 export interface DataPlanResults {
-    // tslint:disable-next-line: no-any
-    results?: Array<{ [key: string]: any }>;
+    results?: ValidationResultEvent[];
     batch?: Batch;
 }

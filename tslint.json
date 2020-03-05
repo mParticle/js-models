@@ -10,15 +10,6 @@
                 "limit": 15
             }
         ],
-        "max-line-length": [
-            true,
-            {
-                "limit": 80,
-                "ignore-pattern": "^import |^export {(.*?)}",
-                "check-strings": true,
-                "check-regex": true
-            }
-        ],
         "interface-over-type-literal": false,
         "no-default-export": false,
         "variable-name": [
