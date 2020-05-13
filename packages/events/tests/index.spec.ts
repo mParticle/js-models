@@ -287,6 +287,15 @@ describe('Event Server Models', () => {
             other_id_2: 'other_2',
             other_id_3: 'other_3',
             other_id_4: 'other_4',
+            other_id_5: 'other_5',
+            other_id_6: 'other_6',
+            other_id_7: 'other_7',
+            other_id_8: 'other_8',
+            other_id_9: 'other_9',
+            other_id_10: 'other_10',
+            mobile_number: 'mobile_number',
+            phone_number_2: 'phone_number_2',
+            phone_number_3: 'phone_number_3',
         };
         expect(batchUserIdentities).toBeDefined();
 

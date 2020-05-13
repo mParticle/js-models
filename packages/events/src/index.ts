@@ -150,6 +150,15 @@ export interface BatchUserIdentities {
     other_id_2?: string;
     other_id_3?: string;
     other_id_4?: string;
+    other_id_5?: string;
+    other_id_6?: string;
+    other_id_7?: string;
+    other_id_8?: string;
+    other_id_9?: string;
+    other_id_10?: string;
+    mobile_number?: string;
+    phone_number_2?: string;
+    phone_number_3?: string;
 }
 
 export interface BreadcrumbEvent {
@@ -563,6 +572,15 @@ export enum IdentityTypeEnum {
     otherId2 = 'other_id_2',
     otherId3 = 'other_id_3',
     otherId4 = 'other_id_4',
+    otherId5 = 'other_id_5',
+    otherId6 = 'other_id_6',
+    otherId7 = 'other_id_7',
+    otherId8 = 'other_id_8',
+    otherId9 = 'other_id_9',
+    otherId10 = 'other_id_10',
+    mobileNumber = 'mobile_number',
+    phoneNumber2 = 'phone_number_2',
+    phoneNumber3 = 'phone_number_3',
 }
 
 export type IdentityType =
@@ -578,7 +596,16 @@ export type IdentityType =
     | IdentityTypeEnum.facebookCustomAudienceId
     | IdentityTypeEnum.otherId2
     | IdentityTypeEnum.otherId3
-    | IdentityTypeEnum.otherId4;
+    | IdentityTypeEnum.otherId4
+    | IdentityTypeEnum.otherId5
+    | IdentityTypeEnum.otherId6
+    | IdentityTypeEnum.otherId7
+    | IdentityTypeEnum.otherId8
+    | IdentityTypeEnum.otherId9
+    | IdentityTypeEnum.otherId10
+    | IdentityTypeEnum.mobileNumber
+    | IdentityTypeEnum.phoneNumber2
+    | IdentityTypeEnum.phoneNumber3;
 
 export interface NetworkPerformanceEvent {
     data?: NetworkPerformanceEventData;
