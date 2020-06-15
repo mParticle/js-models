@@ -412,7 +412,7 @@ describe('Event Server Models', () => {
         const addToWishlistCommerceEnum: CommerceEventDataCustomEventType =
             CommerceEventDataCustomEventTypeEnum.addToWishlist;
         const removeFromWishlistCommerceEnum: CommerceEventDataCustomEventType =
-            CommerceEventDataCustomEventTypeEnum.removeFromWishList;
+            CommerceEventDataCustomEventTypeEnum.removeFromWishlist;
         const impressionCommerceEnum: CommerceEventDataCustomEventType =
             CommerceEventDataCustomEventTypeEnum.impression;
 

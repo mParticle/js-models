@@ -222,7 +222,7 @@ export enum CommerceEventDataCustomEventTypeEnum {
     promotionView = 'promotion_view',
     promotionClick = 'promotion_click',
     addToWishlist = 'add_to_wishlist',
-    removeFromWishList = 'remove_from_wishlist',
+    removeFromWishlist = 'remove_from_wishlist',
     impression = 'impression',
 }
 
@@ -238,7 +238,7 @@ export type CommerceEventDataCustomEventType =
     | CommerceEventDataCustomEventTypeEnum.promotionView
     | CommerceEventDataCustomEventTypeEnum.promotionClick
     | CommerceEventDataCustomEventTypeEnum.addToWishlist
-    | CommerceEventDataCustomEventTypeEnum.removeFromWishList
+    | CommerceEventDataCustomEventTypeEnum.removeFromWishlist
     | CommerceEventDataCustomEventTypeEnum.impression;
 
 export interface CommonEventData {
