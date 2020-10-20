@@ -1,6 +1,6 @@
 {
     "name": "@mparticle/model-translation",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Package for translating mParticle event models",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
