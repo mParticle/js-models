@@ -58,6 +58,7 @@ export const customEventTypeMap: Record<string, string> = {
     user_content: 'UserContent',
     user_preference: 'UserPreference',
     social: 'Social',
+    media: 'Media',
     other: 'Other',
 };
 

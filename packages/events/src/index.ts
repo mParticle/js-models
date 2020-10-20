@@ -326,6 +326,7 @@ export enum CustomEventDataCustomEventTypeEnum {
     userContent = 'user_content',
     userPreference = 'user_preference',
     social = 'social',
+    media = 'media',
     other = 'other',
     unknown = 'unknown',
 }
@@ -337,6 +338,7 @@ export type CustomEventDataCustomEventType =
     | CustomEventDataCustomEventTypeEnum.userContent
     | CustomEventDataCustomEventTypeEnum.userPreference
     | CustomEventDataCustomEventTypeEnum.social
+    | CustomEventDataCustomEventTypeEnum.media
     | CustomEventDataCustomEventTypeEnum.other
     | CustomEventDataCustomEventTypeEnum.unknown;
 
