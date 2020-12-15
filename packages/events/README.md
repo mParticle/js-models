@@ -15,12 +15,16 @@ npm install @mparticle/event-models
 ## Usage
 
 ```typescript
-import { CustomEvent } from '@mparticle/event-models';
+import {
+    CustomEvent,
+    CustomEventDataCustomEventTypeEnum,
+    EventTypeEnum,
+} from '@mparticle/event-models';
 
 const sampleCustomEvent: CustomEvent = {
-    event_type: 'custom_event',
+    event_type: EventTypeEnum.customEvent,
     data: {
-        custom_event_type: 'other',
+        custom_event_type: CustomEventDataCustomEventTypeEnum.other,
         event_name: 'My custom event',
         custom_flags: {
             custom: 'flag',
