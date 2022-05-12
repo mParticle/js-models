@@ -3,7 +3,7 @@ export interface ApplicationInformation {
     application_version?: string;
     application_build_number?: string;
     install_referrer?: string;
-    _package?: string;
+    package?: string;
     os?: ApplicationInformationOsEnum;
     apple_search_ads_attributes?: { [key: string]: { [key: string]: string } };
 }
