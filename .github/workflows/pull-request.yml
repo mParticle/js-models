@@ -24,11 +24,11 @@ jobs:
             - name: Lint with ESLint
               run: npm run lint
 
-            - name: Run Core tests
-              run: npm run test
-
             - name: Build Files
               run: npm run build
+
+            - name: Run Core tests
+              run: npm run test
 
             - name: Archive npm failure logs
               uses: actions/upload-artifact@v2
