@@ -1,6 +1,6 @@
 {
     "name": "@mparticle/mp-config-json-schema",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "JSON Schema for mp.config.json",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
