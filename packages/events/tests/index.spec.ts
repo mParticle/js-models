@@ -75,7 +75,7 @@ import {
 describe('Event Server Models', () => {
     it('should declare all interfaces', () => {
         const appInfo: ApplicationInformation = {
-            _package: 'test_package',
+            package: 'test_package',
             application_name: 'test',
             application_version: '1.2.3,',
             application_build_number: '112233',
