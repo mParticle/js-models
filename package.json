@@ -19,6 +19,8 @@
     },
     "pre-commit": [
         "lint",
+        "bootstrap",
+        "build",
         "test"
     ],
     "private": true,
