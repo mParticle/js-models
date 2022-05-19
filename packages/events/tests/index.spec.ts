@@ -206,6 +206,7 @@ describe('Event Server Models', () => {
             application_info: {
                 application_name: 'test',
             },
+            modified: true,
             user_attributes: {
                 name: 'tester',
             },

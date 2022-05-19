@@ -105,7 +105,7 @@ export interface Batch {
     device_info?: DeviceInformation;
     application_info?: ApplicationInformation;
     user_attributes?: { [key: string]: string | string[] };
-    mutated?: boolean;
+    modified?: boolean;
     deleted_user_attributes?: string[];
     user_identities?: BatchUserIdentities;
     environment: BatchEnvironmentEnum;
