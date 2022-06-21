@@ -181,6 +181,13 @@ describe('Event Server Models', () => {
                 session_start_unixtime_ms: 35000640,
                 event_start_unixtime_ms: 35000640,
                 custom_attributes: { key: 'value' },
+                custom_flags: {
+                    isCustom: true,
+                    hasCustom: 'yes',
+                    hasNumbers: 42,
+                    hasArrays: ['yup'],
+                    hasObjects: { works: true },
+                },
                 location: { latitude: 0, longitude: 0, accuracy: 1 },
                 device_current_state: { cpu: 'Cylon' },
                 is_goal_defined: false,
