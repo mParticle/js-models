@@ -251,6 +251,14 @@ export interface CommonEventData {
     session_start_unixtime_ms?: number;
     event_start_unixtime_ms?: number;
     custom_attributes?: { [key: string]: string };
+    custom_flags?: {
+        [key: string]:
+            | number
+            | string
+            | boolean
+            | unknown[]
+            | Record<string, unknown>;
+    };
     location?: GeoLocation;
     device_current_state?: DeviceCurrentState;
     is_goal_defined?: boolean;
