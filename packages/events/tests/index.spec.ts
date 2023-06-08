@@ -86,6 +86,7 @@ describe('Event Server Models', () => {
                     nested: 'true',
                 },
             },
+            is_using_sideloaded_kits: false,
         };
 
         expect(appInfo).toBeDefined();

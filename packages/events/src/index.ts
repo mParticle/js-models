@@ -6,6 +6,7 @@ export interface ApplicationInformation {
     package?: string;
     os?: ApplicationInformationOsEnum;
     apple_search_ads_attributes?: { [key: string]: { [key: string]: string } };
+    is_using_sideloaded_kits?: boolean;
 }
 
 /**
