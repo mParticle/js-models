@@ -125,6 +125,7 @@ export interface Batch {
     consent_state?: ConsentState;
     job_id?: string;
     context?: Context;
+    partner_identities?: { [key: string]: string };
 }
 
 /**

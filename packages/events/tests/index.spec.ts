@@ -245,6 +245,9 @@ describe('Event Server Models', () => {
             batch_id: '12324124',
             mpid: '1300010334',
             sdk_version: 'test.1.223.',
+            partner_identities: {
+                partner_id: 'foo',
+            },
             consent_state: {
                 gdpr: {
                     'Test Purpose': {
