@@ -271,6 +271,7 @@ export interface CommonEventData {
     is_main_thread?: boolean;
     canonical_name?: string;
     event_system_notification_info?: EventSystemNotificationInfo;
+    active_time_on_site_ms?: number;
 }
 
 export interface ConsentState {
