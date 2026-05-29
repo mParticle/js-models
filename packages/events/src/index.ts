@@ -125,6 +125,7 @@ export interface Batch {
     consent_state?: ConsentState;
     job_id?: string;
     context?: Context;
+    partner_identities?: { [key: string]: string };
 }
 
 /**
@@ -272,6 +273,7 @@ export interface CommonEventData {
     canonical_name?: string;
     event_system_notification_info?: EventSystemNotificationInfo;
     page_url?: string;
+    active_time_on_site_ms?: number;
 }
 
 export interface ConsentState {
