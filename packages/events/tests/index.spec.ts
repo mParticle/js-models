@@ -338,6 +338,7 @@ describe('Event Server Models', () => {
                 is_main_thread: false,
                 canonical_name: 'skywalker',
                 active_time_on_site_ms: 1000,
+                total_time_on_site_ms: 2000,
                 event_system_notification_info: {
                     type: 'gdpr_change',
                 },
@@ -502,6 +503,7 @@ describe('Event Server Models', () => {
                 is_main_thread: false,
                 canonical_name: 'skywalker',
                 active_time_on_site_ms: 1000,
+                total_time_on_site_ms: 2000,
                 event_system_notification_info: {
                     type: 'gdpr_change',
                 },
@@ -540,6 +542,7 @@ describe('Event Server Models', () => {
                 is_main_thread: false,
                 canonical_name: 'skywalker',
                 active_time_on_site_ms: 1000,
+                total_time_on_site_ms: 2000,
                 event_system_notification_info: {
                     type: 'gdpr_change',
                 },
@@ -661,6 +664,7 @@ describe('Event Server Models', () => {
                 is_main_thread: false,
                 canonical_name: 'skywalker',
                 active_time_on_site_ms: 1000,
+                total_time_on_site_ms: 2000,
                 event_system_notification_info: {
                     type: 'gdpr_change',
                 },
@@ -695,6 +699,7 @@ describe('Event Server Models', () => {
                 is_main_thread: false,
                 canonical_name: 'skywalker',
                 active_time_on_site_ms: 1000,
+                total_time_on_site_ms: 2000,
                 event_system_notification_info: {
                     type: 'gdpr_change',
                 },
@@ -768,6 +773,7 @@ describe('Event Server Models', () => {
                 is_main_thread: false,
                 canonical_name: 'skywalker',
                 active_time_on_site_ms: 1000,
+                total_time_on_site_ms: 2000,
                 event_system_notification_info: {
                     type: 'gdpr_change',
                 },
@@ -836,6 +842,7 @@ describe('Event Server Models', () => {
                 is_main_thread: false,
                 canonical_name: 'skywalker',
                 active_time_on_site_ms: 1000,
+                total_time_on_site_ms: 2000,
                 event_system_notification_info: {
                     type: 'gdpr_change',
                 },
@@ -910,6 +917,7 @@ describe('Event Server Models', () => {
                 is_main_thread: false,
                 canonical_name: 'skywalker',
                 active_time_on_site_ms: 1000,
+                total_time_on_site_ms: 2000,
                 event_system_notification_info: {
                     type: 'gdpr_change',
                 },
@@ -948,6 +956,7 @@ describe('Event Server Models', () => {
                 is_main_thread: false,
                 canonical_name: 'skywalker',
                 active_time_on_site_ms: 1000,
+                total_time_on_site_ms: 2000,
                 event_system_notification_info: {
                     type: 'gdpr_change',
                 },
@@ -982,6 +991,7 @@ describe('Event Server Models', () => {
                 is_main_thread: false,
                 canonical_name: 'skywalker',
                 active_time_on_site_ms: 1000,
+                total_time_on_site_ms: 2000,
                 event_system_notification_info: {
                     type: 'gdpr_change',
                 },
@@ -1015,6 +1025,7 @@ describe('Event Server Models', () => {
                 is_main_thread: false,
                 canonical_name: 'skywalker',
                 active_time_on_site_ms: 1000,
+                total_time_on_site_ms: 2000,
                 event_system_notification_info: {
                     type: 'gdpr_change',
                 },
@@ -1073,6 +1084,7 @@ describe('Event Server Models', () => {
                 is_main_thread: false,
                 canonical_name: 'skywalker',
                 active_time_on_site_ms: 1000,
+                total_time_on_site_ms: 2000,
                 event_system_notification_info: {
                     type: 'gdpr_change',
                 },
@@ -1118,6 +1130,7 @@ describe('Event Server Models', () => {
                 is_main_thread: false,
                 canonical_name: 'skywalker',
                 active_time_on_site_ms: 1000,
+                total_time_on_site_ms: 2000,
                 event_system_notification_info: {
                     type: 'gdpr_change',
                 },

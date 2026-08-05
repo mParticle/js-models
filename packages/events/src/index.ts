@@ -274,6 +274,7 @@ export interface CommonEventData {
     event_system_notification_info?: EventSystemNotificationInfo;
     page_url?: string;
     active_time_on_site_ms?: number;
+    total_time_on_site_ms?: number;
 }
 
 export interface ConsentState {
