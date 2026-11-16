@@ -9,3 +9,13 @@ updates:
       target-branch: 'chore/dependabot'
       labels: ['dependabot']
       open-pull-requests-limit: 10
+      cooldown:
+        default-days: 7
+    - package-ecosystem: github-actions
+      directory: '/'
+      schedule:
+        interval: weekly
+      labels: ['dependabot']
+      open-pull-requests-limit: 10
+      cooldown:
+        default-days: 7
